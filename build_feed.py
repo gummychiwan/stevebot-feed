@@ -5,7 +5,9 @@ Layout produced (repo root = this directory):
     index.json                      {"latest": "YYYY-MM-DD", "updated": iso, "dates": [...]}
     YYYY-MM-DD/
         study-data.json             homework, announcements, events, materials manifest
-        summary.html                classroom summary (tabs deep-linkable: #hw #ann #cal)
+        homework.html               homework section only (filters work standalone)
+        announcements.html          announcements section only
+        calendar.html               calendar section only (day popups work standalone)
         timetable.html              that week's study timetable
         materials/*.pdf             key notes / flashcards / mock papers
 
@@ -90,6 +92,87 @@ def newest_materials_dir():
     return os.path.join(base, cands[0]) if cands else None
 
 
+def _block(s, tag, id_value):
+    """Extract the <tag ... id="id_value" ...>...</tag> block, depth-matched."""
+    idpos = s.find(f'id="{id_value}"')
+    if idpos == -1:
+        return ""
+    dstart = s.rfind(f'<{tag}', 0, idpos)
+    close = f'</{tag}>'
+    depth, i = 0, dstart
+    while True:
+        o = s.find(f'<{tag}', i + 1)
+        c = s.find(close, i + 1)
+        if c == -1:
+            return ""
+        if o != -1 and o < c:
+            depth += 1
+            i = o
+        else:
+            if depth == 0:
+                return s[dstart:c + len(close)]
+            depth -= 1
+            i = c
+
+
+def _split_summary(day_dir):
+    """Split school-calendar.html into homework/announcements/calendar pages."""
+    src = "/home/hatch/workspace/your_files/school-calendar/school-calendar.html"
+    if not os.path.exists(src):
+        return
+    s = open(src).read()
+
+    css_m = re.search(r'<style[^>]*>(.*?)</style>', s, re.S)
+    css = css_m.group(1) if css_m else ""
+    js = re.search(r'<script>(.*?)</script>', s, re.S).group(1)
+    footer_m = re.search(r'<footer.*?</footer>', s, re.S)
+    footer = footer_m.group(0) if footer_m else ""
+    overlay = _block(s, "div", "overlay")
+
+    def js_chunk(name, next_name=None):
+        st = js.find(f'============ {name}')
+        en = js.find(f'============ {next_name}') if next_name else len(js)
+        return js[st:en]
+
+    preamble = js[:js.find('============ Tabs')]
+    js_hw = preamble + js_chunk('Homework', 'Announcements') + "\nrenderHomework();\n"
+    js_ann = preamble + js_chunk('Announcements', 'Calendar')
+    js_cal = (preamble + js_chunk('Calendar', 'Modal')
+              + js_chunk('Modal', 'Init') + "\nrenderCalendar();\n")
+
+    def page(title, body, script):
+        return (f'<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
+                f'<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+                f'<title>{title}</title>\n<style>{css}</style>\n</head>\n<body>\n'
+                f'<header class="page-head"><h1>{title}</h1>'
+                f'<p class="who">Steve Cheng &middot; Class 6B</p></header>\n'
+                f'<main>\n{body}\n</main>\n{footer}\n<script>{script}</script>\n'
+                f'</body>\n</html>')
+
+    def panel(key):
+        html = _block(s, "section", f"panel-{key}")
+        # make the lone panel visible (original relies on tab switching)
+        html = re.sub(r'<section([^>]*?)class="panel"([^>]*?)>',
+                      r'<section\1class="panel active"\2>', html, count=1)
+        html = html.replace(' hidden', '', 1)
+        return html
+
+    pages = [
+        ("homework.html", "Homework 功課", panel("hw"), js_hw),
+        ("announcements.html", "Announcements 通告", panel("ann"), js_ann),
+        ("calendar.html", "Calendar 日曆", panel("cal") + "\n" + overlay, js_cal),
+    ]
+    for fname, title, body, script in pages:
+        # sanity: no tab-switching code should remain in split pages
+        assert "selectTab" not in script, fname
+        with open(os.path.join(day_dir, fname), "w") as f:
+            f.write(page(title, body, script))
+    # drop the old combined file; the app now uses the three pages
+    old = os.path.join(day_dir, "summary.html")
+    if os.path.exists(old):
+        os.remove(old)
+
+
 def build(date_str, prune_keep=10):
     data_path = newest_data_json()
     data = json.load(open(data_path)) if data_path else {}
@@ -132,25 +215,10 @@ def build(date_str, prune_keep=10):
     if os.path.exists(tt):
         shutil.copy2(tt, os.path.join(day_dir, "timetable.html"))
 
-    # 3b. summary.html — classroom summary with deep-linkable tabs.
-    # The Studiyo app opens summary.html#hw / #ann / #cal in a WebView so the
-    # app UI always matches the summary HTML exactly. Injection happens here
-    # (not in the artifact) so every future export keeps working.
-    SUMMARY_SRC = "/home/hatch/workspace/your_files/school-calendar/school-calendar.html"
-    DEEPLINK_JS = (
-        "<script>\n"
-        "/* Studiyo app deep-link: summary.html#hw | #ann | #cal opens that tab */\n"
-        "(function(){var h=(location.hash||'').replace('#','');"
-        "if(h==='hw'||h==='ann'||h==='cal'){"
-        "var b=document.querySelector('[data-tab=\"'+h+'\"]');"
-        "if(b){b.click();}}})();\n"
-        "</script>\n"
-    )
-    if os.path.exists(SUMMARY_SRC):
-        html = open(SUMMARY_SRC).read()
-        html = html.replace("</body>", DEEPLINK_JS + "</body>")
-        with open(os.path.join(day_dir, "summary.html"), "w") as f:
-            f.write(html)
+    # 3b. Split the classroom summary into standalone section pages.
+    # The Studiyo app loads one page per button (no tab bar inside the app).
+    # Splitting happens here at build time so every future export keeps working.
+    _split_summary(day_dir)
 
     # 4. index.json with latest pointer (+ prune old dates to keep repo lean)
     dates = sorted(d for d in os.listdir(FEED)
