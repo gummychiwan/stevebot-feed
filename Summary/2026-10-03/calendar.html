@@ -544,10 +544,15 @@ function openDay(key, opener) {
   // repaints the dialog off-screen, so users see no details). Pin the body
   // at the current scroll offset instead, and force a reflow so the dialog
   // paints in the visible viewport before focus moves.
-  const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-  document.body.dataset.lockY = String(scrollY);
-  document.body.style.top = -scrollY + "px";
-  document.body.classList.add("modal-open");
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  if (isIOS) {
+    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.dataset.lockY = String(scrollY);
+    document.body.style.top = -scrollY + "px";
+    document.body.classList.add("modal-open");
+  } else {
+    document.body.style.overflow = "hidden";
+  }
   overlay.classList.remove("hidden");
   void overlay.offsetWidth;
   focusSafe(closeBtn);
@@ -558,6 +563,7 @@ function closeModal() {
   delete document.body.dataset.lockY;
   document.body.classList.remove("modal-open");
   document.body.style.top = "";
+  document.body.style.overflow = "";
   window.scrollTo(0, y);
   if (lastOpener && document.contains(lastOpener)) focusSafe(lastOpener);
 }
