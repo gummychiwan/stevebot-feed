@@ -2,7 +2,7 @@
 """Build the SteveBot study feed: a dated folder of JSON + files the app reads.
 
 Layout produced (repo root = this directory):
-    index.json                      {"latest": "Summary_Steve/YYYY-MM-DD", "updated": iso, "dates": [...]}
+    index_Steve.json                {"latest": "Summary_Steve/YYYY-MM-DD", "updated": iso, "dates": [...]}
     YYYY-MM-DD/
         study-data.json             homework, announcements, events, materials manifest
         homework.html               homework section only (filters work standalone)
@@ -12,7 +12,7 @@ Layout produced (repo root = this directory):
     materials_Steve/index.json        every material, for the app's folder UI
     Data/timetable.html             current weekly timetable
 
-The app fetches index.json, reads `latest`, then loads that folder.
+The app fetches index_Steve.json, reads `latest`, then loads that folder.
 Run daily after new summaries/materials are made:
     python3 build_feed.py [YYYY-MM-DD]
 """
@@ -298,8 +298,13 @@ def build(date_str, prune_keep=10):
         "updated": datetime.now(HKT).isoformat(timespec="seconds"),
         "dates": dates,
     }
-    with open(os.path.join(FEED, "index.json"), "w") as f:
+    with open(os.path.join(FEED, "index_Steve.json"), "w") as f:
         json.dump(index, f, ensure_ascii=False, indent=1)
+    # Old root index.json is retired (breaks pre-rename app installs);
+    # make sure it never gets re-published.
+    legacy = os.path.join(FEED, "index.json")
+    if os.path.exists(legacy):
+        os.remove(legacy)
 
     print(f"feed date {date_str}: {len(hw)} homework, "
           f"{len(study_data['announcements'])} announcements, "
