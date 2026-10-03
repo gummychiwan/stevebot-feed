@@ -24,8 +24,14 @@ HKT = timezone(timedelta(hours=8))
 SUBJECT_ZH = {
     "Science": "科學", "History": "歷史", "ICT": "資訊科技",
     "Maths": "數學", "Geography": "地理", "Chinese": "中文",
-    "English": "英文", "Art": "視藝", "Music": "音樂",
+    "English": "英文", "Art": "美術", "Music": "音樂",
+    "Drama": "戲劇", "PE": "體育", "French": "法文",
+    "Spanish": "西班牙文", "Textile": "紡織", "STEM": "STEM",
+    "Chinese History": "中國歷史",
 }
+# All of Steve's school subjects (user confirmed 2026-10-03).
+# Every subject gets a folder under materials/, even before it has files.
+ALL_SUBJECTS = sorted(SUBJECT_ZH.keys())
 KIND_PATTERNS = [
     (re.compile(r"flashcards?", re.I), "Flashcards", "生字卡"),
     (re.compile(r"key-?notes?", re.I), "Key Notes", "重點筆記"),
@@ -201,9 +207,18 @@ def _write_materials_index():
                     entries.append(e)
     entries.sort(key=lambda m: (m["subject_en"], m.get("date") or "9999",
                                 m["test_date"] or "9999"))
+    # Every subject gets a folder, even with no materials yet
+    # (.gitkeep keeps empty folders in git).
+    for subj in ALL_SUBJECTS:
+        sdir = os.path.join(base, subj)
+        os.makedirs(sdir, exist_ok=True)
+        if not any(os.scandir(sdir)):
+            open(os.path.join(sdir, ".gitkeep"), "w").close()
     with open(os.path.join(base, "index.json"), "w") as f:
         json.dump({"updated": datetime.now(HKT).isoformat(timespec="seconds"),
-                   "count": len(entries), "materials": entries},
+                   "count": len(entries),
+                   "subjects": [{"en": k, "zh": SUBJECT_ZH[k]} for k in ALL_SUBJECTS],
+                   "materials": entries},
                   f, ensure_ascii=False, indent=1)
 
 
