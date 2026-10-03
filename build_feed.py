@@ -130,11 +130,16 @@ def _split_summary(day_dir):
     overlay = _block(s, "div", "overlay")
 
     def js_chunk(name, next_name=None):
-        st = js.find(f'============ {name}')
-        en = js.find(f'============ {next_name}') if next_name else len(js)
+        bi = js.find(f'============ {name}')
+        st = js.rfind('/*', 0, bi)
+        if next_name:
+            npos = js.find(f'============ {next_name}')
+            en = js.rfind('/*', 0, npos)
+        else:
+            en = len(js)
         return js[st:en]
 
-    preamble = js[:js.find('============ Tabs')]
+    preamble = js[:js.rfind('/*', 0, js.find('============ Tabs'))]
     js_hw = preamble + js_chunk('Homework', 'Announcements') + "\nrenderHomework();\n"
     js_ann = preamble + js_chunk('Announcements', 'Calendar')
     js_cal = (preamble + js_chunk('Calendar', 'Modal')
