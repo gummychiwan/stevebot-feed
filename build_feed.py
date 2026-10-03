@@ -2,7 +2,7 @@
 """Build the SteveBot study feed: a dated folder of JSON + files the app reads.
 
 Layout produced (repo root = this directory):
-    index.json                      {"latest": "YYYY-MM-DD", "updated": iso, "dates": [...]}
+    index.json                      {"latest": "Summary/YYYY-MM-DD", "updated": iso, "dates": [...]}
     YYYY-MM-DD/
         study-data.json             homework, announcements, events, materials manifest
         homework.html               homework section only (filters work standalone)
@@ -227,7 +227,7 @@ def build(date_str, prune_keep=10):
     open(os.path.join(FEED, ".nojekyll"), "a").close()
     data_path = newest_data_json()
     data = json.load(open(data_path)) if data_path else {}
-    day_dir = os.path.join(FEED, date_str)
+    day_dir = os.path.join(FEED, "Summary", date_str)
     os.makedirs(day_dir, exist_ok=True)
 
     # 1. study-data.json — only actionable items, app-friendly
@@ -283,16 +283,18 @@ def build(date_str, prune_keep=10):
     _split_summary(day_dir)
 
     # 4. index.json with latest pointer (+ prune old dates to keep repo lean)
-    dates = sorted(d for d in os.listdir(FEED)
+    sum_dir = os.path.join(FEED, "Summary")
+    os.makedirs(sum_dir, exist_ok=True)
+    dates = sorted(d for d in os.listdir(sum_dir)
                    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
-                   and os.path.isdir(os.path.join(FEED, d)))
+                   and os.path.isdir(os.path.join(sum_dir, d)))
     for old in dates[:-prune_keep]:
-        shutil.rmtree(os.path.join(FEED, old))
-    dates = sorted(d for d in os.listdir(FEED)
+        shutil.rmtree(os.path.join(sum_dir, old))
+    dates = sorted(d for d in os.listdir(sum_dir)
                    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
-                   and os.path.isdir(os.path.join(FEED, d)))
+                   and os.path.isdir(os.path.join(sum_dir, d)))
     index = {
-        "latest": dates[-1] if dates else date_str,
+        "latest": f"Summary/{dates[-1]}" if dates else f"Summary/{date_str}",
         "updated": datetime.now(HKT).isoformat(timespec="seconds"),
         "dates": dates,
     }
