@@ -2,14 +2,14 @@
 """Build the SteveBot study feed: a dated folder of JSON + files the app reads.
 
 Layout produced (repo root = this directory):
-    index.json                      {"latest": "Summary/YYYY-MM-DD", "updated": iso, "dates": [...]}
+    index.json                      {"latest": "Summary_Steve/YYYY-MM-DD", "updated": iso, "dates": [...]}
     YYYY-MM-DD/
         study-data.json             homework, announcements, events, materials manifest
         homework.html               homework section only (filters work standalone)
         announcements.html          announcements section only
         calendar.html               calendar section only (day popups work standalone)
-    materials/<Subject>/YYYY-MM-DD/*.pdf
-    materials/index.json            every material, for the app's folder UI
+    materials_Steve/<Subject>/YYYY-MM-DD/*.pdf
+    materials_Steve/index.json        every material, for the app's folder UI
     Data/timetable.html             current weekly timetable
 
 The app fetches index.json, reads `latest`, then loads that folder.
@@ -30,7 +30,7 @@ SUBJECT_ZH = {
     "Chinese History": "中國歷史",
 }
 # All of Steve's school subjects (user confirmed 2026-10-03).
-# Every subject gets a folder under materials/, even before it has files.
+# Every subject gets a folder under materials_Steve/, even before it has files.
 ALL_SUBJECTS = sorted(SUBJECT_ZH.keys())
 KIND_PATTERNS = [
     (re.compile(r"flashcards?", re.I), "Flashcards", "生字卡"),
@@ -187,7 +187,7 @@ def _split_summary(day_dir):
 
 def _write_materials_index():
     """Root materials/index.json: every PDF, grouped for the app's folder UI."""
-    base = os.path.join(FEED, "materials")
+    base = os.path.join(FEED, "materials_Steve")
     entries = []
     if os.path.isdir(base):
         for subj in sorted(os.listdir(base)):
@@ -202,7 +202,7 @@ def _write_materials_index():
                     if not f.lower().endswith(".pdf"):
                         continue
                     e = parse_material(f)
-                    e["file"] = f"materials/{subj}/{d}/{f}"
+                    e["file"] = f"materials_Steve/{subj}/{d}/{f}"
                     e["date"] = d
                     entries.append(e)
     entries.sort(key=lambda m: (m["subject_en"], m.get("date") or "9999",
@@ -227,7 +227,7 @@ def build(date_str, prune_keep=10):
     open(os.path.join(FEED, ".nojekyll"), "a").close()
     data_path = newest_data_json()
     data = json.load(open(data_path)) if data_path else {}
-    day_dir = os.path.join(FEED, "Summary", date_str)
+    day_dir = os.path.join(FEED, "Summary_Steve", date_str)
     os.makedirs(day_dir, exist_ok=True)
 
     # 1. study-data.json — only actionable items, app-friendly
@@ -245,10 +245,10 @@ def build(date_str, prune_keep=10):
             if not f.lower().endswith(".pdf"):
                 continue
             entry = parse_material(f)
-            subj_dir = os.path.join(FEED, "materials", entry["subject_en"], mat_date)
+            subj_dir = os.path.join(FEED, "materials_Steve", entry["subject_en"], mat_date)
             os.makedirs(subj_dir, exist_ok=True)
             shutil.copy2(os.path.join(src_mat, f), os.path.join(subj_dir, f))
-            entry["file"] = f"materials/{entry['subject_en']}/{mat_date}/{f}"
+            entry["file"] = f"materials_Steve/{entry['subject_en']}/{mat_date}/{f}"
             manifest.append(entry)
     manifest.sort(key=lambda m: (m["subject_en"], m["test_date"] or "9999"))
     _write_materials_index()
@@ -260,7 +260,7 @@ def build(date_str, prune_keep=10):
         "homework": hw,
         "announcements": data.get("announcements", []),
         "events": events,
-        "timetable": "Data/timetable.html",
+        "timetable": "Data_Steve/timetable.html",
         "materials": manifest,
     }
     with open(os.path.join(day_dir, "study-data.json"), "w") as f:
@@ -268,7 +268,7 @@ def build(date_str, prune_keep=10):
 
     # 3. timetable -> root Data/timetable.html (single current file)
     tt = "/home/hatch/workspace/user/files/steve-study-timetable.html"
-    tt_dir = os.path.join(FEED, "Data")
+    tt_dir = os.path.join(FEED, "Data_Steve")
     if os.path.exists(tt):
         os.makedirs(tt_dir, exist_ok=True)
         shutil.copy2(tt, os.path.join(tt_dir, "timetable.html"))
@@ -283,7 +283,7 @@ def build(date_str, prune_keep=10):
     _split_summary(day_dir)
 
     # 4. index.json with latest pointer (+ prune old dates to keep repo lean)
-    sum_dir = os.path.join(FEED, "Summary")
+    sum_dir = os.path.join(FEED, "Summary_Steve")
     os.makedirs(sum_dir, exist_ok=True)
     dates = sorted(d for d in os.listdir(sum_dir)
                    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
@@ -294,7 +294,7 @@ def build(date_str, prune_keep=10):
                    if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
                    and os.path.isdir(os.path.join(sum_dir, d)))
     index = {
-        "latest": f"Summary/{dates[-1]}" if dates else f"Summary/{date_str}",
+        "latest": f"Summary_Steve/{dates[-1]}" if dates else f"Summary_Steve/{date_str}",
         "updated": datetime.now(HKT).isoformat(timespec="seconds"),
         "dates": dates,
     }
