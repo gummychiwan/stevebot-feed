@@ -8,8 +8,9 @@ Layout produced (repo root = this directory):
         homework.html               homework section only (filters work standalone)
         announcements.html          announcements section only
         calendar.html               calendar section only (day popups work standalone)
-        timetable.html              that week's study timetable
-        materials/*.pdf             key notes / flashcards / mock papers
+    materials/<Subject>/YYYY-MM-DD/*.pdf
+    materials/index.json            every material, for the app's folder UI
+    timetable/timetable.html        current weekly timetable
 
 The app fetches index.json, reads `latest`, then loads that folder.
 Run daily after new summaries/materials are made:
@@ -178,12 +179,41 @@ def _split_summary(day_dir):
         os.remove(old)
 
 
+def _write_materials_index():
+    """Root materials/index.json: every PDF, grouped for the app's folder UI."""
+    base = os.path.join(FEED, "materials")
+    entries = []
+    if os.path.isdir(base):
+        for subj in sorted(os.listdir(base)):
+            sdir = os.path.join(base, subj)
+            if not os.path.isdir(sdir):
+                continue
+            for d in sorted(os.listdir(sdir)):
+                ddir = os.path.join(sdir, d)
+                if not (re.fullmatch(r"\d{4}-\d{2}-\d{2}", d) and os.path.isdir(ddir)):
+                    continue
+                for f in sorted(os.listdir(ddir)):
+                    if not f.lower().endswith(".pdf"):
+                        continue
+                    e = parse_material(f)
+                    e["file"] = f"materials/{subj}/{d}/{f}"
+                    e["date"] = d
+                    entries.append(e)
+    entries.sort(key=lambda m: (m["subject_en"], m.get("date") or "9999",
+                                m["test_date"] or "9999"))
+    with open(os.path.join(base, "index.json"), "w") as f:
+        json.dump({"updated": datetime.now(HKT).isoformat(timespec="seconds"),
+                   "count": len(entries), "materials": entries},
+                  f, ensure_ascii=False, indent=1)
+
+
 def build(date_str, prune_keep=10):
+    # Disable Jekyll on GitHub Pages: serve raw files, build fast.
+    open(os.path.join(FEED, ".nojekyll"), "a").close()
     data_path = newest_data_json()
     data = json.load(open(data_path)) if data_path else {}
     day_dir = os.path.join(FEED, date_str)
-    mat_dir = os.path.join(day_dir, "materials")
-    os.makedirs(mat_dir, exist_ok=True)
+    os.makedirs(day_dir, exist_ok=True)
 
     # 1. study-data.json — only actionable items, app-friendly
     hw = [h for h in data.get("homework", [])
@@ -191,16 +221,22 @@ def build(date_str, prune_keep=10):
     hw.sort(key=lambda h: (h.get("due") or "9999", h.get("subject_en", "")))
     events = sorted(data.get("events", []), key=lambda e: e.get("date") or "9999")
 
-    # 2. materials: copy PDFs + manifest
+    # 2. materials -> root materials/<Subject>/<YYYY-MM-DD>/ (outside date folders)
     src_mat = newest_materials_dir()
     manifest = []
-    if os.path.isdir(src_mat):
+    mat_date = os.path.basename(src_mat) if src_mat else date_str
+    if src_mat and os.path.isdir(src_mat):
         for f in sorted(os.listdir(src_mat)):
             if not f.lower().endswith(".pdf"):
                 continue
-            shutil.copy2(os.path.join(src_mat, f), os.path.join(mat_dir, f))
-            manifest.append(parse_material(f))
+            entry = parse_material(f)
+            subj_dir = os.path.join(FEED, "materials", entry["subject_en"], mat_date)
+            os.makedirs(subj_dir, exist_ok=True)
+            shutil.copy2(os.path.join(src_mat, f), os.path.join(subj_dir, f))
+            entry["file"] = f"materials/{entry['subject_en']}/{mat_date}/{f}"
+            manifest.append(entry)
     manifest.sort(key=lambda m: (m["subject_en"], m["test_date"] or "9999"))
+    _write_materials_index()
 
     study_data = {
         "date": date_str,
@@ -209,16 +245,22 @@ def build(date_str, prune_keep=10):
         "homework": hw,
         "announcements": data.get("announcements", []),
         "events": events,
-        "timetable": "timetable.html",
+        "timetable": "timetable/timetable.html",
         "materials": manifest,
     }
     with open(os.path.join(day_dir, "study-data.json"), "w") as f:
         json.dump(study_data, f, ensure_ascii=False, indent=1)
 
-    # 3. timetable.html
+    # 3. timetable -> root timetable/timetable.html (single current file)
     tt = "/home/hatch/workspace/user/files/steve-study-timetable.html"
+    tt_dir = os.path.join(FEED, "timetable")
     if os.path.exists(tt):
-        shutil.copy2(tt, os.path.join(day_dir, "timetable.html"))
+        os.makedirs(tt_dir, exist_ok=True)
+        shutil.copy2(tt, os.path.join(tt_dir, "timetable.html"))
+    # drop the old per-date copy if present
+    old_tt = os.path.join(day_dir, "timetable.html")
+    if os.path.exists(old_tt):
+        os.remove(old_tt)
 
     # 3b. Split the classroom summary into standalone section pages.
     # The Studiyo app loads one page per button (no tab bar inside the app).
