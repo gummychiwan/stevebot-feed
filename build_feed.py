@@ -10,7 +10,7 @@ Layout produced (repo root = this directory):
         calendar.html               calendar section only (day popups work standalone)
     materials/<Subject>/YYYY-MM-DD/*.pdf
     materials/index.json            every material, for the app's folder UI
-    timetable/timetable.html        current weekly timetable
+    Data/timetable.html             current weekly timetable
 
 The app fetches index.json, reads `latest`, then loads that folder.
 Run daily after new summaries/materials are made:
@@ -260,15 +260,15 @@ def build(date_str, prune_keep=10):
         "homework": hw,
         "announcements": data.get("announcements", []),
         "events": events,
-        "timetable": "timetable/timetable.html",
+        "timetable": "Data/timetable.html",
         "materials": manifest,
     }
     with open(os.path.join(day_dir, "study-data.json"), "w") as f:
         json.dump(study_data, f, ensure_ascii=False, indent=1)
 
-    # 3. timetable -> root timetable/timetable.html (single current file)
+    # 3. timetable -> root Data/timetable.html (single current file)
     tt = "/home/hatch/workspace/user/files/steve-study-timetable.html"
-    tt_dir = os.path.join(FEED, "timetable")
+    tt_dir = os.path.join(FEED, "Data")
     if os.path.exists(tt):
         os.makedirs(tt_dir, exist_ok=True)
         shutil.copy2(tt, os.path.join(tt_dir, "timetable.html"))
