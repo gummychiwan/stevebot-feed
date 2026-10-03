@@ -401,9 +401,9 @@ const hwSorted = [...DATA.homework].sort((a, b) => {
 const hwList = document.getElementById("hw-list");
 // Default view: Outstanding items.
 let hwFilter = "outstanding";
-const isHwOut = h => h.submission === "classroom" && h.status === "outstanding";
+const isHwOut = h => h.submission === "classroom" && h.status === "outstanding" && h.due;
 const isHwDone = h => h.submission === "classroom" && h.status === "completed";
-const isHwOther = h => h.submission === "announcement" || h.submission === "unverified";
+const isHwOther = h => !isHwOut(h) && !isHwDone(h);
 document.getElementById("n-all").textContent = "(" + hwSorted.length + ")";
 document.getElementById("n-out").textContent = "(" + hwSorted.filter(isHwOut).length + ")";
 document.getElementById("n-done").textContent = "(" + hwSorted.filter(isHwDone).length + ")";
