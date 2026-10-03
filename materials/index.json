@@ -1,0 +1,150 @@
+{
+ "updated": "2026-10-03T18:45:30+08:00",
+ "count": 12,
+ "materials": [
+  {
+   "subject_en": "Geography",
+   "subject_zh": "地理",
+   "test_en": "Restless Earth",
+   "test_date": "2026-10-15",
+   "kind_en": "Flashcards",
+   "kind_zh": "生字卡",
+   "file": "materials/Geography/2026-10-03/Geography-Restless-Earth-Flashcards-15oct2026.pdf",
+   "title_en": "Geography Restless Earth — Flashcards",
+   "title_zh": "地理Restless Earth——生字卡",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Geography",
+   "subject_zh": "地理",
+   "test_en": "Restless Earth",
+   "test_date": "2026-10-15",
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials/Geography/2026-10-03/Geography-Restless-Earth-Key-Notes-15oct2026.pdf",
+   "title_en": "Geography Restless Earth — Key Notes",
+   "title_zh": "地理Restless Earth——重點筆記",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Geography",
+   "subject_zh": "地理",
+   "test_en": "Restless Earth",
+   "test_date": "2026-10-15",
+   "kind_en": "Mock Paper",
+   "kind_zh": "模擬試卷",
+   "file": "materials/Geography/2026-10-03/Geography-Restless-Earth-Mock-Paper-15oct2026.pdf",
+   "title_en": "Geography Restless Earth — Mock Paper",
+   "title_zh": "地理Restless Earth——模擬試卷",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "History",
+   "subject_zh": "歷史",
+   "test_en": "MC Quiz",
+   "test_date": "2026-10-04",
+   "kind_en": "Mock Paper",
+   "kind_zh": "模擬試卷",
+   "file": "materials/History/2026-10-03/History-MC-Quiz-Mock-Paper-04oct2026.pdf",
+   "title_en": "History MC Quiz — Mock Paper",
+   "title_zh": "歷史MC Quiz——模擬試卷",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "History",
+   "subject_zh": "歷史",
+   "test_en": "Unit1",
+   "test_date": "2026-10-04",
+   "kind_en": "Flashcards",
+   "kind_zh": "生字卡",
+   "file": "materials/History/2026-10-03/History-Unit1-Flashcards-04oct2026.pdf",
+   "title_en": "History Unit1 — Flashcards",
+   "title_zh": "歷史Unit1——生字卡",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "History",
+   "subject_zh": "歷史",
+   "test_en": "Unit1 History Skills",
+   "test_date": "2026-10-04",
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials/History/2026-10-03/History-Unit1-History-Skills-Key-Notes-04oct2026.pdf",
+   "title_en": "History Unit1 History Skills — Key Notes",
+   "title_zh": "歷史Unit1 History Skills——重點筆記",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "ICT",
+   "subject_zh": "資訊科技",
+   "test_en": "Digital Society 2",
+   "test_date": "2026-10-04",
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials/ICT/2026-10-03/ICT-Digital-Society-2-Key-Notes-04oct2026.pdf",
+   "title_en": "ICT Digital Society 2 — Key Notes",
+   "title_zh": "資訊科技Digital Society 2——重點筆記",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Maths",
+   "subject_zh": "數學",
+   "test_en": "UC02 Percentages",
+   "test_date": "2026-10-13",
+   "kind_en": "Flashcards",
+   "kind_zh": "生字卡",
+   "file": "materials/Maths/2026-10-03/Maths-UC02-Percentages-Flashcards-13oct2026.pdf",
+   "title_en": "Maths UC02 Percentages — Flashcards",
+   "title_zh": "數學UC02 Percentages——生字卡",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Maths",
+   "subject_zh": "數學",
+   "test_en": "UC02 Percentages",
+   "test_date": "2026-10-13",
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials/Maths/2026-10-03/Maths-UC02-Percentages-Key-Notes-13oct2026.pdf",
+   "title_en": "Maths UC02 Percentages — Key Notes",
+   "title_zh": "數學UC02 Percentages——重點筆記",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Maths",
+   "subject_zh": "數學",
+   "test_en": "UC02 Percentages",
+   "test_date": "2026-10-13",
+   "kind_en": "Mock Paper",
+   "kind_zh": "模擬試卷",
+   "file": "materials/Maths/2026-10-03/Maths-UC02-Percentages-Mock-Paper-13oct2026.pdf",
+   "title_en": "Maths UC02 Percentages — Mock Paper",
+   "title_zh": "數學UC02 Percentages——模擬試卷",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Science",
+   "subject_zh": "科學",
+   "test_en": "Quiz1 Topic1",
+   "test_date": null,
+   "kind_en": "Flashcards",
+   "kind_zh": "生字卡",
+   "file": "materials/Science/2026-10-03/Science-Quiz1-Topic1-Flashcards.pdf",
+   "title_en": "Science Quiz1 Topic1 — Flashcards",
+   "title_zh": "科學Quiz1 Topic1——生字卡",
+   "date": "2026-10-03"
+  },
+  {
+   "subject_en": "Science",
+   "subject_zh": "科學",
+   "test_en": "Quiz1 Topic1 KeyNotes",
+   "test_date": null,
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials/Science/2026-10-03/Science-Quiz1-Topic1-KeyNotes.pdf",
+   "title_en": "Science Quiz1 Topic1 KeyNotes — Key Notes",
+   "title_zh": "科學Quiz1 Topic1 KeyNotes——重點筆記",
+   "date": "2026-10-03"
+  }
+ ]
+}
