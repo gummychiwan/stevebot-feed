@@ -37,13 +37,13 @@
    "title_zh": "Digital Society 2（工作紙）"
   },
   {
-   "desc_en": "Draw the apparatus via Amplify; Mark as Done in Classroom.",
-   "desc_zh": "喺 Amplify 畫實驗器材圖，喺 Classroom 按 Mark as Done 交。",
+   "desc_en": "Draw the apparatus via Amplify; Mark as Done in Classroom. User confirmed submitted — marked per user, not verified in Classroom.",
+   "desc_zh": "喺 Amplify 畫實驗器材圖，喺 Classroom 按 Mark as Done 交。 用戶確認已交——按用戶指示標記，未經 Classroom 核實。",
    "due": null,
    "status": "outstanding",
    "subject_en": "2627-Y6B Science",
    "subject_zh": "科學",
-   "submission": "classroom",
+   "submission": "unverified",
    "title_en": "Drawing of apparatus",
    "title_zh": "繪畫實驗器材圖"
   },
