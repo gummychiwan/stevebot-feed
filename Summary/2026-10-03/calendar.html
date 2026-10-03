@@ -256,6 +256,21 @@
     .tab .t-icon { display: none; }
   }
 
+  /* ---- inline day detail (replaces modal popup) ---- */
+  .day-detail {
+    margin-top: 18px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 20px 20px 24px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.12);
+  }
+  .day-detail.hidden { display: none; }
+  .dd-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .dd-head h3 { margin: 0 0 4px; font-size: 1.25rem; font-weight: 900; }
+  .dd-head .m-zh { margin: 0 0 10px; color: var(--muted); font-weight: 700; }
+  .dd-head .modal-close { position: static; flex-shrink: 0; }
   /* ---- modal ---- */
   .overlay {
     position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 50;
@@ -333,8 +348,20 @@
         <span><span class="dot ns" aria-hidden="true"></span>No school 不用上學</span>
       </div>
       <div class="cal-grid" id="cal-grid" role="grid" aria-labelledby="cal-title-en"></div>
-      <p class="cal-hint">Tap a day to see full details. 撳一日嚟睇詳細內容。</p>
+      <p class="cal-hint">Tap a day to see full details below. 撳一日喺下面睇詳細內容。</p>
     </section>
+<section class="day-detail hidden" id="day-detail" aria-live="polite">
+  <div class="dd-head">
+    <div>
+      <h3 id="dd-title"></h3>
+      <p class="m-zh" id="dd-zh"></p>
+    </div>
+    <button class="modal-close" id="dd-close" aria-label="Close 關閉">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="ev-list" id="dd-events"></ul>
+</section>
 <div class="overlay hidden" id="overlay">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <button class="modal-close" id="modal-close" aria-label="Close 關閉">
@@ -516,17 +543,22 @@ const modalTitle = document.getElementById("modal-title");
 const modalZh = document.getElementById("modal-zh");
 const modalEvents = document.getElementById("modal-events");
 const closeBtn = document.getElementById("modal-close");
+const dayDetail = document.getElementById("day-detail");
+const ddTitle = document.getElementById("dd-title");
+const ddZh = document.getElementById("dd-zh");
+const ddEvents = document.getElementById("dd-events");
+const ddClose = document.getElementById("dd-close");
 let lastOpener = null;
 
 function openDay(key, opener) {
   lastOpener = opener || null;
-  modalTitle.textContent = fullEn(key);
-  modalZh.textContent = fullZh(key);
+  ddTitle.textContent = fullEn(key);
+  ddZh.textContent = fullZh(key);
   const evs = byDay[key] || [];
   if (!evs.length) {
-    modalEvents.innerHTML = '<li><p class="ev-empty">No events on this day.</p><p class="ev-empty">呢日冇活動。</p></li>';
+    ddEvents.innerHTML = '<li><p class="ev-empty">No events on this day.</p><p class="ev-empty">呢日冇活動。</p></li>';
   } else {
-    modalEvents.innerHTML = evs.map(({ ev }) => {
+    ddEvents.innerHTML = evs.map(({ ev }) => {
       const tm = TYPE_META[ev.type] || { en: ev.type, zh: "" };
       let html = '<li class="ev">'
         + '<div class="badges" style="margin-bottom:6px"><span class="badge t-' + ev.type + '">' + esc(tm.en) + ' ' + esc(tm.zh) + '</span></div>'
@@ -538,27 +570,15 @@ function openDay(key, opener) {
       }
       if (ev.time)   html += '<p class="meta"><span class="k">Time 時間：</span>' + esc(ev.time) + '</p>';
       if (ev.location) html += '<p class="meta"><span class="k">Location 地點：</span>' + esc(ev.location) + '</p>';
-      html += '<p class="c-en">' + linkify(ev.details_en) + '</p><p class="c-zh">' + linkify(ev.details_zh) + '</p></li>';
-      return html;
+      if (ev.detail_en || ev.detail_zh) {
+        html += '<p class="meta">' + esc(ev.detail_en || '') + (ev.detail_zh ? '<br><span class="v-zh">' + esc(ev.detail_zh) + '</span>' : '') + '</p>';
+      }
+      if (ev.source) html += '<p class="meta"><a href="' + esc(ev.source) + '" target="_blank" rel="noopener">Source 來源</a></p>';
+      return html + '</li>';
     }).join("");
   }
-  // iOS-safe scroll lock: body{overflow:hidden} alone can misplace or hide
-  // fixed-position overlays on mobile Safari/in-app webviews (the page
-  // repaints the dialog off-screen, so users see no details). Pin the body
-  // at the current scroll offset instead, and force a reflow so the dialog
-  // paints in the visible viewport before focus moves.
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-  if (isIOS) {
-    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
-    document.body.dataset.lockY = String(scrollY);
-    document.body.style.top = -scrollY + "px";
-    document.body.classList.add("modal-open");
-  } else {
-    document.body.style.overflow = "hidden";
-  }
-  overlay.classList.remove("hidden");
-  void overlay.offsetWidth;
-  focusSafe(closeBtn);
+  dayDetail.classList.remove("hidden");
+  dayDetail.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 function closeModal() {
   overlay.classList.add("hidden");
@@ -579,6 +599,10 @@ grid.addEventListener("click", e => {
   if (btn) openDay(btn.dataset.day, btn);
 });
 closeBtn.addEventListener("click", closeModal);
+ddClose.addEventListener("click", () => {
+  dayDetail.classList.add("hidden");
+  if (lastOpener && document.contains(lastOpener)) focusSafe(lastOpener);
+});
 overlay.addEventListener("click", e => { if (e.target === overlay) closeModal(); });
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && !overlay.classList.contains("hidden")) closeModal();
