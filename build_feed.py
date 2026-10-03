@@ -5,6 +5,7 @@ Layout produced (repo root = this directory):
     index.json                      {"latest": "YYYY-MM-DD", "updated": iso, "dates": [...]}
     YYYY-MM-DD/
         study-data.json             homework, announcements, events, materials manifest
+        summary.html                classroom summary (tabs deep-linkable: #hw #ann #cal)
         timetable.html              that week's study timetable
         materials/*.pdf             key notes / flashcards / mock papers
 
@@ -79,6 +80,16 @@ def newest_data_json():
     return os.path.join(base, cands[0], "data.json")
 
 
+def newest_materials_dir():
+    base = "/home/hatch/workspace/study/materials"
+    cands = sorted(
+        (d for d in os.listdir(base)
+         if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
+         and os.path.isdir(os.path.join(base, d))),
+        reverse=True)
+    return os.path.join(base, cands[0]) if cands else None
+
+
 def build(date_str, prune_keep=10):
     data_path = newest_data_json()
     data = json.load(open(data_path)) if data_path else {}
@@ -93,7 +104,7 @@ def build(date_str, prune_keep=10):
     events = sorted(data.get("events", []), key=lambda e: e.get("date") or "9999")
 
     # 2. materials: copy PDFs + manifest
-    src_mat = "/home/hatch/workspace/study/materials/2026-10-03"
+    src_mat = newest_materials_dir()
     manifest = []
     if os.path.isdir(src_mat):
         for f in sorted(os.listdir(src_mat)):
@@ -120,6 +131,26 @@ def build(date_str, prune_keep=10):
     tt = "/home/hatch/workspace/user/files/steve-study-timetable.html"
     if os.path.exists(tt):
         shutil.copy2(tt, os.path.join(day_dir, "timetable.html"))
+
+    # 3b. summary.html — classroom summary with deep-linkable tabs.
+    # The Studiyo app opens summary.html#hw / #ann / #cal in a WebView so the
+    # app UI always matches the summary HTML exactly. Injection happens here
+    # (not in the artifact) so every future export keeps working.
+    SUMMARY_SRC = "/home/hatch/workspace/your_files/school-calendar/school-calendar.html"
+    DEEPLINK_JS = (
+        "<script>\n"
+        "/* Studiyo app deep-link: summary.html#hw | #ann | #cal opens that tab */\n"
+        "(function(){var h=(location.hash||'').replace('#','');"
+        "if(h==='hw'||h==='ann'||h==='cal'){"
+        "var b=document.querySelector('[data-tab=\"'+h+'\"]');"
+        "if(b){b.click();}}})();\n"
+        "</script>\n"
+    )
+    if os.path.exists(SUMMARY_SRC):
+        html = open(SUMMARY_SRC).read()
+        html = html.replace("</body>", DEEPLINK_JS + "</body>")
+        with open(os.path.join(day_dir, "summary.html"), "w") as f:
+            f.write(html)
 
     # 4. index.json with latest pointer (+ prune old dates to keep repo lean)
     dates = sorted(d for d in os.listdir(FEED)
