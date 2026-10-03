@@ -135,6 +135,10 @@ def _split_summary(day_dir):
     footer_m = re.search(r'<footer.*?</footer>', s, re.S)
     footer = footer_m.group(0) if footer_m else ""
     overlay = _block(s, "div", "overlay")
+    # Inline day-detail card (2026-10-03): replaces the modal in the app's
+    # WebView, where position:fixed modals fail. Must be present or the
+    # calendar script throws on ddClose and renderCalendar() never runs.
+    day_detail = _block(s, "section", "day-detail")
 
     def js_chunk(name, next_name=None):
         bi = js.find(f'============ {name}')
@@ -172,7 +176,8 @@ def _split_summary(day_dir):
     pages = [
         ("homework.html", "Homework 功課", panel("hw"), js_hw),
         ("announcements.html", "Announcements 通告", panel("ann"), js_ann),
-        ("calendar.html", "Calendar 日曆", panel("cal") + "\n" + overlay, js_cal),
+        ("calendar.html", "Calendar 日曆",
+         panel("cal") + "\n" + day_detail + "\n" + overlay, js_cal),
     ]
     for fname, title, body, script in pages:
         # sanity: no tab-switching code should remain in split pages
