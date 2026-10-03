@@ -1,6 +1,72 @@
 {
- "updated": "2026-10-03T18:45:30+08:00",
+ "updated": "2026-10-03T19:14:30+08:00",
  "count": 12,
+ "subjects": [
+  {
+   "en": "Art",
+   "zh": "美術"
+  },
+  {
+   "en": "Chinese",
+   "zh": "中文"
+  },
+  {
+   "en": "Chinese History",
+   "zh": "中國歷史"
+  },
+  {
+   "en": "Drama",
+   "zh": "戲劇"
+  },
+  {
+   "en": "English",
+   "zh": "英文"
+  },
+  {
+   "en": "French",
+   "zh": "法文"
+  },
+  {
+   "en": "Geography",
+   "zh": "地理"
+  },
+  {
+   "en": "History",
+   "zh": "歷史"
+  },
+  {
+   "en": "ICT",
+   "zh": "資訊科技"
+  },
+  {
+   "en": "Maths",
+   "zh": "數學"
+  },
+  {
+   "en": "Music",
+   "zh": "音樂"
+  },
+  {
+   "en": "PE",
+   "zh": "體育"
+  },
+  {
+   "en": "STEM",
+   "zh": "STEM"
+  },
+  {
+   "en": "Science",
+   "zh": "科學"
+  },
+  {
+   "en": "Spanish",
+   "zh": "西班牙文"
+  },
+  {
+   "en": "Textile",
+   "zh": "紡織"
+  }
+ ],
  "materials": [
   {
    "subject_en": "Geography",
