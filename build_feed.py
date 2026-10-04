@@ -32,6 +32,17 @@ SUBJECT_ZH = {
 # All of Steve's school subjects (user confirmed 2026-10-03).
 # Every subject gets a folder under materials_Steve/, even before it has files.
 ALL_SUBJECTS = sorted(SUBJECT_ZH.keys())
+
+# Nathan's 4P subjects (DBSPD, 2026-2027). Separate materials_Nathan/ tree —
+# never mixed with Steve's.
+NATHAN_SUBJECT_ZH = {
+    "Chinese": "中文", "English": "英文", "Maths": "數學", "Science": "科學",
+    "Humanities": "人文學科", "Putonghua": "普通話", "Music": "音樂",
+    "Digital Education": "數碼教育", "Visual Arts": "視覺藝術", "PE": "體育",
+    "Religious Education": "宗教教育", "Moral Education": "品德教育",
+}
+NATHAN_ALL_SUBJECTS = sorted(NATHAN_SUBJECT_ZH.keys())
+NATHAN_MATERIALS_SRC = "/home/hatch/workspace/study/materials-nathan"
 KIND_PATTERNS = [
     (re.compile(r"flashcards?", re.I), "Flashcards", "生字卡"),
     (re.compile(r"key-?notes?", re.I), "Key Notes", "重點筆記"),
@@ -43,8 +54,9 @@ MONTHS = {m: i + 1 for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"])}
 
 
-def parse_material(fname):
+def parse_material(fname, subject_zh=None):
     """Turn 'Maths-UC02-Percentages-Mock-Paper-13oct2026.pdf' into a manifest entry."""
+    szh = subject_zh or SUBJECT_ZH
     stem = fname[:-4] if fname.lower().endswith(".pdf") else fname
     parts = stem.split("-")
     subject = parts[0]
@@ -67,13 +79,13 @@ def parse_material(fname):
     test_label = " ".join(label_parts) or subject
     return {
         "subject_en": subject,
-        "subject_zh": SUBJECT_ZH.get(subject, subject),
+        "subject_zh": szh.get(subject, subject),
         "test_en": test_label,
         "test_date": test_date,
         "kind_en": kind_en, "kind_zh": kind_zh,
         "file": f"materials/{fname}",
         "title_en": f"{subject} {test_label} — {kind_en}",
-        "title_zh": f"{SUBJECT_ZH.get(subject, subject)}{test_label}——{kind_zh}",
+        "title_zh": f"{szh.get(subject, subject)}{test_label}——{kind_zh}",
     }
 
 
@@ -89,14 +101,13 @@ def newest_data_json():
     return os.path.join(base, cands[0], "data.json")
 
 
-def newest_materials_dir():
-    base = "/home/hatch/workspace/study/materials"
+def newest_materials_dir(src_base="/home/hatch/workspace/study/materials"):
     cands = sorted(
-        (d for d in os.listdir(base)
+        (d for d in os.listdir(src_base)
          if re.fullmatch(r"\d{4}-\d{2}-\d{2}", d)
-         and os.path.isdir(os.path.join(base, d))),
+         and os.path.isdir(os.path.join(src_base, d))),
         reverse=True)
-    return os.path.join(base, cands[0]) if cands else None
+    return os.path.join(src_base, cands[0]) if cands else None
 
 
 def _block(s, tag, id_value):
@@ -190,9 +201,9 @@ def _split_summary(day_dir):
         os.remove(old)
 
 
-def _write_materials_index():
-    """Root materials/index.json: every PDF, grouped for the app's folder UI."""
-    base = os.path.join(FEED, "materials_Steve")
+def _write_materials_index_for(feed_dir_name, all_subjects, subject_zh):
+    """Root materials_<User>/index.json: every PDF, grouped for the app's folder UI."""
+    base = os.path.join(FEED, feed_dir_name)
     entries = []
     if os.path.isdir(base):
         for subj in sorted(os.listdir(base)):
@@ -206,15 +217,16 @@ def _write_materials_index():
                 for f in sorted(os.listdir(ddir)):
                     if not f.lower().endswith(".pdf"):
                         continue
-                    e = parse_material(f)
-                    e["file"] = f"materials_Steve/{subj}/{d}/{f}"
+                    e = parse_material(f, subject_zh)
+                    e["file"] = f"{feed_dir_name}/{subj}/{d}/{f}"
                     e["date"] = d
+                    e["upload_date"] = d  # folder date = creation date (was missing -> "Undated")
                     entries.append(e)
     entries.sort(key=lambda m: (m["subject_en"], m.get("date") or "9999",
                                 m["test_date"] or "9999"))
     # Every subject gets a folder, even with no materials yet
     # (.gitkeep keeps empty folders in git).
-    for subj in ALL_SUBJECTS:
+    for subj in all_subjects:
         sdir = os.path.join(base, subj)
         os.makedirs(sdir, exist_ok=True)
         if not any(os.scandir(sdir)):
@@ -222,9 +234,37 @@ def _write_materials_index():
     with open(os.path.join(base, "index.json"), "w") as f:
         json.dump({"updated": datetime.now(HKT).isoformat(timespec="seconds"),
                    "count": len(entries),
-                   "subjects": [{"en": k, "zh": SUBJECT_ZH[k]} for k in ALL_SUBJECTS],
+                   "subjects": [{"en": k, "zh": subject_zh[k]} for k in all_subjects],
                    "materials": entries},
                   f, ensure_ascii=False, indent=1)
+
+
+def _write_materials_index():
+    """Root materials/index.json: every PDF, grouped for the app's folder UI."""
+    _write_materials_index_for("materials_Steve", ALL_SUBJECTS, SUBJECT_ZH)
+
+
+def build_nathan_materials():
+    """Copy newest materials-nathan PDFs into materials_Nathan/ + index.json.
+
+    Standalone: run after generating Nathan's PDFs. Never touches Steve's tree.
+    """
+    open(os.path.join(FEED, ".nojekyll"), "a").close()
+    src_mat = (newest_materials_dir(NATHAN_MATERIALS_SRC)
+               if os.path.isdir(NATHAN_MATERIALS_SRC) else None)
+    mat_date = os.path.basename(src_mat) if src_mat else None
+    if src_mat and os.path.isdir(src_mat):
+        for f in sorted(os.listdir(src_mat)):
+            if not f.lower().endswith(".pdf"):
+                continue
+            entry = parse_material(f, NATHAN_SUBJECT_ZH)
+            subj_dir = os.path.join(FEED, "materials_Nathan",
+                                    entry["subject_en"], mat_date)
+            os.makedirs(subj_dir, exist_ok=True)
+            shutil.copy2(os.path.join(src_mat, f), os.path.join(subj_dir, f))
+    _write_materials_index_for("materials_Nathan", NATHAN_ALL_SUBJECTS,
+                               NATHAN_SUBJECT_ZH)
+    print(f"nathan materials: source={src_mat}")
 
 
 def build(date_str, prune_keep=10):
@@ -317,5 +357,8 @@ def build(date_str, prune_keep=10):
 
 
 if __name__ == "__main__":
-    build(sys.argv[1] if len(sys.argv) > 1 else
-          datetime.now(HKT).strftime("%Y-%m-%d"))
+    if len(sys.argv) > 1 and sys.argv[1] == "nathan-materials":
+        build_nathan_materials()
+    else:
+        build(sys.argv[1] if len(sys.argv) > 1 else
+              datetime.now(HKT).strftime("%Y-%m-%d"))
