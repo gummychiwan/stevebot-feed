@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "generated_at": "2026-10-04T15:28:37+08:00",
+ "generated_at": "2026-10-04T23:34:55+08:00",
  "source": "data.json",
  "homework": [
   {
@@ -24,6 +24,17 @@
    "status": "outstanding",
    "desc_en": "Posted by Dwayne Man on 30 Sept with the instruction \"Please finish the Digital Society 2 worksheet for homework. Most of it was completed today and well. Hand in the homework for the next class.\" It shows \"Your work: Assigned\" (not handed in) with a Mark as done control and a 14 Oct due date. Attached file: Google Docs \"Digital Society 2\". Bring your laptop to the ICT class.",
    "desc_zh": "由 Dwayne Man 於 9 月 30 日發佈，要求「完成 Digital Society 2 工作紙作功課，大部分已在課堂完成，做得很好，下一課交功課」。狀態為「Assigned」（未交），有 Mark as done 按鈕，截止日期為 10 月 14 日。附件：Google 文件「Digital Society 2」。上 ICT 課記得帶手提電腦。"
+  },
+  {
+   "title_en": "Worksheet booklet p.18 Task 2(b) — draw a pie chart",
+   "title_zh": "工作紙小冊子第 18 頁 Task 2(b)——繪畫餅圖",
+   "subject_en": "2627 6B Geography",
+   "subject_zh": "地理",
+   "due": null,
+   "submission": "announcement",
+   "status": "na",
+   "desc_en": "Booklet work (p. 18 Task 2(b) — draw a pie chart). Posted by Benny Tse on 2 Oct. Hand-in not verifiable in Classroom — never counted as overdue.",
+   "desc_zh": "小冊子功課（第 18 頁 Task 2(b)——繪畫餅圖）。Benny Tse 於 10 月 2 日發佈。未能喺 Classroom 核實交咗未——唔會計做逾期。"
   },
   {
    "desc_en": "Unit 2: Gothic writing conventions (posted 30 Sept). Hand in / Mark as Done in Classroom.",
