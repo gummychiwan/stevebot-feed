@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "generated_at": "2026-10-04T23:34:55+08:00",
+ "generated_at": "2026-10-04T23:39:46+08:00",
  "source": "data.json",
  "homework": [
   {
@@ -547,6 +547,16 @@
    "details_zh": "有興趣的同學請於 2026 年 10 月 7 日前電郵 chans@cky.edu.hk。海報見班主任 Stream。",
    "time": null,
    "location": null
+  },
+  {
+   "date": "2026-10-08",
+   "type": "test",
+   "title_en": "Chinese Basic Knowledge Challenge (test)",
+   "title_zh": "中文基礎知識挑戰（測驗）",
+   "details_en": "Grade-wide Chinese challenge test. Review scope not yet confirmed — the teacher has not answered the class question about what to review. Added from parent report; not posted in Classroom.",
+   "details_zh": "年級統一中文挑戰測驗。複習範圍待確認——老師尚未回覆同學關於複習範圍的提問。由家長提供；Classroom 未公布.",
+   "time": "",
+   "location": ""
   },
   {
    "date": "2026-10-09",
