@@ -1,6 +1,6 @@
 {
  "date": "2026-10-04",
- "generated_at": "2026-10-04T01:32:19+08:00",
+ "generated_at": "2026-10-04T15:28:37+08:00",
  "source": "data.json",
  "homework": [
   {
@@ -15,37 +15,15 @@
    "title_zh": "家課 #2（小冊子第 5–6 頁）"
   },
   {
-   "desc_en": "Do the corrections in Official Homework 02 (Mark as Done in Classroom).",
-   "desc_zh": "完成 Official Homework 02 嘅訂正（喺 Classroom 按 Mark as Done 交）。",
-   "due": "2026-10-06",
-   "status": "outstanding",
-   "subject_en": "Maths 6B",
-   "subject_zh": "數學",
-   "submission": "classroom",
-   "title_en": "Corrections — Official Homework 02",
-   "title_zh": "訂正 — Official Homework 02"
-  },
-  {
-   "desc_en": "Finish the Digital Society 2 worksheet; hand in for the next class (Mark as Done in Classroom).",
-   "desc_zh": "完成 Digital Society 2 工作紙，下一堂交（喺 Classroom 按 Mark as Done 交）。",
-   "due": "2026-10-14",
-   "status": "outstanding",
-   "subject_en": "6B ICT",
-   "subject_zh": "資訊科技",
-   "submission": "classroom",
+   "subject_en": "6B ICT (2026-2027)",
+   "subject_zh": "資訊科技 6B",
    "title_en": "Digital Society 2 (worksheet)",
-   "title_zh": "Digital Society 2（工作紙）"
-  },
-  {
-   "desc_en": "Draw the apparatus via Amplify; Mark as Done in Classroom.",
-   "desc_zh": "喺 Amplify 畫實驗器材圖，喺 Classroom 按 Mark as Done 交。",
-   "due": null,
-   "status": "outstanding",
-   "subject_en": "2627-Y6B Science",
-   "subject_zh": "科學",
+   "title_zh": "Digital Society 2（工作紙）",
+   "due": "2026-10-14",
    "submission": "classroom",
-   "title_en": "Drawing of apparatus",
-   "title_zh": "繪畫實驗器材圖"
+   "status": "outstanding",
+   "desc_en": "Posted by Dwayne Man on 30 Sept with the instruction \"Please finish the Digital Society 2 worksheet for homework. Most of it was completed today and well. Hand in the homework for the next class.\" It shows \"Your work: Assigned\" (not handed in) with a Mark as done control and a 14 Oct due date. Attached file: Google Docs \"Digital Society 2\". Bring your laptop to the ICT class.",
+   "desc_zh": "由 Dwayne Man 於 9 月 30 日發佈，要求「完成 Digital Society 2 工作紙作功課，大部分已在課堂完成，做得很好，下一課交功課」。狀態為「Assigned」（未交），有 Mark as done 按鈕，截止日期為 10 月 14 日。附件：Google 文件「Digital Society 2」。上 ICT 課記得帶手提電腦。"
   },
   {
    "desc_en": "Unit 2: Gothic writing conventions (posted 30 Sept). Hand in / Mark as Done in Classroom.",
@@ -226,318 +204,426 @@
  ],
  "announcements": [
   {
+   "date": "2026-10-02",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
    "author": "Janice Leung",
-   "class_en": "6B Homeroom",
-   "class_zh": "6B 班主任",
-   "content_en": "Carbon Neutrality Student Ambassador recruitment — apply by Wed 7 Oct 2026 to chans@cky.edu.hk (S2–S6).",
-   "content_zh": "碳中和學生大使招募——2026年10月7日（星期三）前電郵 chans@cky.edu.hk 報名（S2–S6）。",
-   "date": "2026-10-02"
+   "content_en": "Achieving Carbon Neutrality Student Ambassador recruitment. Interested students should email chans@cky.edu.hk by 7 Oct 2026. Poster attached.",
+   "content_zh": "「實現碳中和」學生大使招募。有興趣的同學請於 2026 年 10 月 7 日前電郵 chans@cky.edu.hk。附海報。"
   },
   {
-   "author": "Janice Leung",
+   "date": "2026-10-02",
    "class_en": "Maths 6B",
-   "class_zh": "數學",
-   "content_en": "Thirteenth Annual HK Primary Mathematics Challenge 2026-27 — Sat 5 Dec 2026, 8:45–12:00, Chinese & English, venue TBC, free entry. Print the reply slip and return it to your Maths teacher to join (contacts: forrest_li@cky.edu.hk / yan_cheung@cky.edu.hk).",
-   "content_zh": "第十三屆全港小學數學挑戰賽 2026-27——2026年12月5日（星期六）上午8:45–12:00，中英文組，地點待定，免費參加。列印回條交畀數學老師報名（聯絡：forrest_li@cky.edu.hk / yan_cheung@cky.edu.hk）。",
-   "date": "2026-10-02"
-  },
-  {
+   "class_zh": "數學 6B",
    "author": "Janice Leung",
-   "class_en": "Maths 6B",
-   "class_zh": "數學",
-   "content_en": "UC02 Percentages test — Tue 13 Oct (Week A Tuesday), 40 minutes, calculators NOT allowed.",
-   "content_zh": "UC02 百分比測驗——10月13日（星期二，Week A），40 分鐘，唔可以用計數機。",
-   "date": "2026-10-02"
+   "content_en": "Hong Kong Primary Mathematics Challenge (HKPMC 2026). Sat 5 Dec 2026, 8:45 am–12:00 noon. All Y1–Y6 students eligible; free of charge. Return the reply slip to the maths teacher.",
+   "content_zh": "香港小學數學挑戰賽（HKPMC 2026）。2026 年 12 月 5 日（星期六）上午 8:45–12:00。小一至小六學生均可參加，免費。回條交數學老師。"
   },
   {
-   "author": "Matthew Ng",
+   "date": "2026-10-02",
+   "class_en": "Maths 6B",
+   "class_zh": "數學 6B",
+   "author": "Janice Leung",
+   "content_en": "UC02 Percentages test announcement (reminder, not homework — no submission slot). Date: 13 October (Week A Tuesday). Time allowed: 40 mins. Calculators not allowed. Covers Unit 2: Percentages.",
+   "content_zh": "UC02 百分數測驗通知（提醒，非功課——無提交位）。日期：10 月 13 日（Week A 星期二）。限時 40 分鐘。不准使用計算機。範圍為單元二：百分數。"
+  },
+  {
+   "date": "2026-10-02",
    "class_en": "Friday Badminton Club 2026-2027",
-   "class_zh": "羽毛球學會",
-   "content_en": "Remaining Term 1 club sessions: Fri 16 Oct, Fri 6 Nov, Fri 13 Nov, Fri 20 Nov, Fri 4 Dec, Fri 11 Dec. Bring PE uniform.",
-   "content_zh": "第一學期餘下嘅學會活動：10月16日、11月6日、11月13日、11月20日、12月4日、12月11日（全部星期五）。記得帶體育服。",
-   "date": "2026-10-02"
+   "class_zh": "星期五羽毛球學會 2026-2027",
+   "author": "Matthew Ng",
+   "content_en": "Remaining club sessions for the first term: 16th Oct, 6th Nov, 13th Nov, 20th Nov, 4th Dec, 11th Dec. Remember to bring your PE uniform.",
+   "content_zh": "第一學期餘下學會活動日期：10 月 16 日、11 月 6 日、11 月 13 日、11 月 20 日、12 月 4 日、12 月 11 日。記得帶體育服。"
   },
   {
-   "author": "Benny Tse",
+   "date": "2026-10-02",
    "class_en": "2627 6B Geography",
-   "class_zh": "地理",
-   "content_en": "Unit Test 'Our Restless Earth' — Thu 15 Oct 2026, 40 minutes, in class. Revision: workbook pp. 3–17, PPT lessons 0/1/2a/2b/3; geography question levels, map skills (grid refs, compass), key terms (plate, lithosphere, convection currents, subduction), plate locations, continental drift, 3 plate movements, fold mountains, volcanoes.",
-   "content_zh": "單元測驗《Our Restless Earth》——2026年10月15日（星期四），40 分鐘，課堂進行。溫習：作業簿第 3–17 頁、PPT 第 0/1/2a/2b/3 課；地理問題層次、地圖技巧（格網座標、指南針）、關鍵詞（板塊、岩石圈、對流、地層隱沒）、板塊位置、大陸漂移、三種板塊運動、褶皺山、火山。",
-   "date": "2026-10-02"
+   "class_zh": "地理 6B",
+   "author": "Benny Tse",
+   "content_en": "Unit Test announcement for 'Our Restless Earth' (reminder, not homework). In two weeks we will have our Unit Test. Revise: pages 3–17 of the lesson work booklet (map reading skills), PPT lessons (0, 1, 2a, 2b, 3), Levels of questioning sheet. The test will be 40 minutes, during class time on Thursday 15th October 2026.",
+   "content_zh": "「Our Restless Earth」單元測驗通知（提醒，非功課）。兩週後將進行單元測驗。溫習：課堂工作冊第 3–17 頁（地圖閱讀技巧）、PPT 課程（0、1、2a、2b、3）、提問層次工作紙。測驗 40 分鐘，於 2026 年 10 月 15 日（星期四）課堂時間進行。"
   },
   {
+   "date": "2026-10-02",
+   "class_en": "2627 6B Geography",
+   "class_zh": "地理 6B",
+   "author": "Benny Tse",
+   "content_en": "Reminder: complete the worksheet booklet p.18 Task 2 (b) — draw a pie chart. No Classroom submission slot; booklet work.",
+   "content_zh": "提醒：完成工作紙小冊子第 18 頁 Task 2 (b)——繪畫餅圖。無 Classroom 提交位；小冊子作業。"
+  },
+  {
+   "date": "2026-09-30",
+   "class_en": "6B ICT (2026-2027)",
+   "class_zh": "資訊科技 6B",
    "author": "Dwayne Man",
-   "class_en": "6B ICT",
-   "class_zh": "資訊科技",
-   "content_en": "\"Digital Society 2 (worksheet)\" posted — remember to bring the Digitalisation 1 homework to the next class.",
-   "content_zh": "已發佈「Digital Society 2（工作紙）」——下一堂記得帶 Digitalisation 1 功課。",
-   "date": "2026-09-30"
+   "content_en": "Remember to bring along your homework tomorrow on Digitalisation 1. (Reminder.)",
+   "content_zh": "記得明天帶 Digitalisation 1 功課。（提醒。）"
   },
   {
-   "author": "Chinese teacher",
+   "date": "2026-09-30",
    "class_en": "26-27 6B Chinese",
-   "class_zh": "中文",
-   "content_en": "國慶快樂 — students with 黃燈/紅燈 in the shared doc should keep revising the shared PPT passage.",
-   "content_zh": "國慶快樂——共享文件入面係黃燈／紅燈嘅同學要繼續修改共享 PPT 嘅段落。",
-   "date": "2026-09-30"
+   "class_zh": "中文 6B",
+   "author": "teacher",
+   "content_en": "國慶快樂！Students whose work was flagged 'yellow light' or 'red light' in the shared document should continue improving their paragraph works in the shared PPT as required.",
+   "content_zh": "國慶快樂！在共享文檔中被點亮「黃燈」和「紅燈」的同學，請繼續按要求完善共享 PPT 中的文段作品。"
   },
   {
-   "author": "Joyce Li",
+   "date": "2026-09-29",
    "class_en": "Hist 6B",
-   "class_zh": "歷史",
-   "content_en": "Formative (MC quiz) arrangement — Unit 1.1–1.5, Date: Mon 12 Oct.",
-   "content_zh": "形成性評估（MC 小測）安排——單元 1.1–1.5，日期：10月12日（星期一）。",
-   "date": "2026-09-29"
+   "class_zh": "歷史 6B",
+   "author": "Joyce Li",
+   "content_en": "Arrangement of the upcoming formative (MC quiz) — Unit 1.1–1.5 (introduction to history, family tree, sources, bias and reliability). Date: 12 Oct. Duration and venue not specified in the post.",
+   "content_zh": "即將進行的形成性評估（選擇題小測）安排——單元 1.1–1.5（歷史導論、族譜、史料、偏見與可靠性）。日期：10 月 12 日。帖文未註明時長及地點。"
   },
   {
-   "author": "Janice Leung",
-   "class_en": "6B Homeroom",
-   "class_zh": "6B 班主任",
-   "content_en": "BYOD Scheme: read the PLKCKY Technology Code of Conduct and complete the form.",
-   "content_zh": "BYOD 計劃：閱讀 PLKCKY 科技行為守則並填妥表格。",
-   "date": "2026-09-29"
+   "date": "2026-09-29",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "BYOD Scheme (forwarded; secondary students): read the PLKCKY Technology Code of Conduct and complete the form.",
+   "content_zh": "BYOD 計劃（轉發；中學生）：閱讀 PLKCKY 科技行為守則並填寫表格。"
   },
   {
-   "author": "Varvara Kurdakova",
+   "date": "2026-09-28",
    "class_en": "6B Drama",
-   "class_zh": "戲劇",
-   "content_en": "Do NOT bring laptops to the drama lesson; finish scripts by Sun 4 Oct and be ready to rehearse.",
-   "content_zh": "戲劇堂唔好帶手提電腦；10月4日（星期日）前完成劇本，準備排練。",
-   "date": "2026-09-28"
+   "class_zh": "戲劇 6B",
+   "author": "teacher",
+   "content_en": "As many of you do not have your laptops set up yet, DO NOT bring your laptops to our drama lesson. Scripts were due 4 Oct; next up is rehearsals.",
+   "content_zh": "由於很多人尚未設定好手提電腦，請勿帶手提電腦上戲劇課。劇本已於 10 月 4 日到期；下一步是排練。"
   },
   {
-   "author": "Carmen Cheung",
-   "class_en": "2627-Y6B Science",
-   "class_zh": "科學",
-   "content_en": "WSH 04-One leg hop lab — data collection spreadsheet shared.",
-   "content_zh": "WSH 04 單腳跳實驗——已分享數據收集試算表。",
-   "date": "2026-09-24"
-  },
-  {
-   "author": "Carmen Cheung",
-   "class_en": "2627-Y6B Science",
-   "class_zh": "科學",
-   "content_en": "QUIZ REMINDER (not homework): Quiz 1 — Tue 6 Oct (P7), 30 mins. Revise all Topic 1 worksheets and the PowerPoint; bring pen, pencil, eraser and ruler.",
-   "content_zh": "小測提醒（唔係功課）：Quiz 1——10月6日（星期二，第七節），30 分鐘。溫習 Topic 1 所有工作紙同 PowerPoint；帶筆、鉛筆、擦膠同間尺。",
-   "date": "2026-09-23"
-  },
-  {
-   "author": "Art teacher",
-   "class_en": "6B ART",
-   "class_zh": "視藝",
-   "content_en": "Guinness World Record ceramic mural — Sat 14 Nov 2026, 10:00–18:00, Sunset Lawn, West Kowloon Cultural District, HK$200 fee. Email the art teacher to join.",
-   "content_zh": "健力士世界紀錄陶瓷壁畫——2026年11月14日（星期六）上午10:00–下午6:00，西九文化區 Sunset Lawn，費用 HK$200。有興趣請電郵視藝老師報名。",
-   "date": "2026-09-22"
-  },
-  {
+   "date": "2026-09-28",
+   "class_en": "6B English 2026/7",
+   "class_zh": "英語 6B",
    "author": "Wayne Pearson",
-   "class_en": "6B English",
-   "class_zh": "英文",
-   "content_en": "Homework reminder — complete the conclusion activity on booklet page 26 by tomorrow.",
-   "content_zh": "家課提醒——聽日前完成小冊子第 26 頁嘅結論活動。",
-   "date": "2026-09-16"
+   "content_en": "A series of Stream homework reminders (2–28 Sept): complete the conclusion activity on booklet page 26; complete booklet pages 22–23 (including the challenge paragraph); complete the embedding-quotes activity on page 19; complete pages 14–15 about Act 2; complete the connotations exercise on booklet page 6; read Act 2 over the weekend; complete pages 8–9 of the booklet. Bi-weekly reading lessons run every Friday of Week B.",
+   "content_zh": "一系列 Stream 功課提醒（9 月 2–28 日）：完成小冊子第 26 頁結論活動；完成第 22–23 頁（包括挑戰段落）；完成第 19 頁嵌入引文活動；完成第 14–15 頁 Act 2；完成小冊子第 6 頁詞義聯想練習；週末閱讀 Act 2；完成小冊子第 8–9 頁。每兩週一次的閱讀課在 Week B 的星期五進行。"
   },
   {
-   "author": "Chinese teacher",
+   "date": "2026-09-26",
    "class_en": "26-27 6B Chinese",
-   "class_zh": "中文",
-   "content_en": "文學之星 competition briefing — 17 Sept 10:15–10:40, venue changed to 5/F meeting room CR1.",
-   "content_zh": "文學之星比賽簡介會——9月17日 10:15–10:40，地點改為 5 樓會議室 CR1。",
-   "date": "2026-09-15"
+   "class_zh": "中文 6B",
+   "author": "teacher",
+   "content_en": "分享兩份何紫單元學習手冊完成範本 (material).",
+   "content_zh": "分享兩份何紫單元學習手冊完成範本（教材）。"
   },
   {
+   "date": "2026-09-24",
+   "class_en": "2627-Y6B Science",
+   "class_zh": "科學 Y6B",
+   "author": "Carmen Cheung",
+   "content_en": "WSH 04 — One leg hop lab — data collection. Link to a Google Sheet shared for the class data.",
+   "content_zh": "WSH 04——單腳跳實驗——數據收集。附班級共用 Google 試算表連結。"
+  },
+  {
+   "date": "2026-09-24",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Multi-Sports Challenge. Image attached.",
+   "content_zh": "Multi-Sports Challenge。附圖片。"
+  },
+  {
+   "date": "2026-09-24",
+   "class_en": "2627 6B Geography",
+   "class_zh": "地理 6B",
+   "author": "Benny Tse",
+   "content_en": "Reminder: Homework #2 (homework booklet) pp. 5–6 was due Friday 2nd October. Booklet work; hand-in not verifiable in Classroom.",
+   "content_zh": "提醒：功課 #2（功課小冊子第 5–6 頁）已於 10 月 2 日（星期五）到期。小冊子作業；未能在 Classroom 核實繳交情況。"
+  },
+  {
+   "date": "2026-09-24",
+   "class_en": "6AB STEM R1 (AUG)",
+   "class_zh": "STEM",
+   "author": "David Go",
+   "content_en": "Piano sample code — finish it with your 5-key setup (attachment: piano sample code.png).",
+   "content_zh": "鋼琴範例程式碼——用你的 5 鍵裝置完成它（附件：piano sample code.png）。"
+  },
+  {
+   "date": "2026-09-23",
+   "class_en": "2627-Y6B Science",
+   "class_zh": "科學 Y6B",
+   "author": "Carmen Cheung",
+   "content_en": "QUIZ REMINDER (not homework — posted as an assignment with 4 attached PPTs but it only reminds about the quiz): Quiz 1 — Date: 6 October 2026 (Tue) — P7. Time allowed: 30 mins. Revision materials: all worksheets & PowerPoint of Topic 1 (lab safety, scientific method, variables/data table/graph, Bunsen burner). Stationery: pen, pencil, eraser & ruler.",
+   "content_zh": "測驗提醒（非功課——雖以作業形式發佈並附 4 份 PPT，但只為提醒測驗）：測驗 1——日期：2026 年 10 月 6 日（星期二）——第七節。限時 30 分鐘。溫習材料：單元一所有工作紙及 PowerPoint（實驗室安全、科學方法、變量／數據表／圖表、酒精燈）。文具：筆、鉛筆、擦膠及直尺。"
+  },
+  {
+   "date": "2026-09-22",
+   "class_en": "6B ART 26/27",
+   "class_zh": "視覺藝術 6B",
+   "author": "teacher",
+   "content_en": "Guinness World Records ceramic mural attempt: 1,000 people creating a mural in one session. Participation fee HK$200. Saturday Nov 14, 2026, 10am–6pm, Sunset Lawn, West Kowloon Cultural District. Email the art teacher to participate.",
+   "content_zh": "健力士世界紀錄陶瓷壁畫挑戰：1,000 人同時創作壁畫。參加費 200 港元。2026 年 11 月 14 日（星期六）上午 10 時至下午 6 時，西九文化區日落草坪。有興趣請電郵美術老師。"
+  },
+  {
+   "date": "2026-09-21",
+   "class_en": "6B English 2026/7",
+   "class_zh": "英語 6B",
    "author": "Wayne Pearson",
-   "class_en": "6B English",
-   "class_zh": "英文",
-   "content_en": "Homework reminder — complete booklet pages 22 and 23 (including the challenge paragraph).",
-   "content_zh": "家課提醒——完成小冊子第 22–23 頁（包括挑戰段落）。",
-   "date": "2026-09-11"
+   "content_en": "Reading assessment information (material; info slides read): Term 1 Formative Reading Assessment was held 24 September (Thursday): students received a prompt question and a Frankenstein extract, and had to write an analytical introduction, ONE PEEL paragraph and a conclusion in 40 minutes. Marked using RAF 1, WAF 3. No reference sheet or planning papers; all work including annotations in the Question-and-Answer booklet; pen only; correction tape/liquid permitted.",
+   "content_zh": "閱讀評估資料（教材；已讀資訊簡報）：第一學期形成性閱讀評估已於 9 月 24 日（星期四）舉行：學生收到提示問題及《Frankenstein》選段，須在 40 分鐘內寫分析性引言、一段 PEEL 段落及結論。按 RAF 1、WAF 3 評分。不設參考資料或草稿紙；所有作答（包括注釋）須寫在問答簿上；必須用原子筆；可用改錯帶／改錯液。"
   },
   {
+   "date": "2026-09-21",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Tuesday Silent Chinese Reading Session — choose a Chinese book from the classroom library and read silently during FTP.",
+   "content_zh": "週二中文靜讀課——從課室圖書館選一本中文書，在 FTP 時間靜讀。"
+  },
+  {
+   "date": "2026-09-20",
+   "class_en": "AÑO 6 A-B 2026-2027",
+   "class_zh": "西班牙語 6 A-B",
+   "author": "Silvia Melita Gonzalez Medina",
+   "content_en": "Practice links for topics discussed in class: el abecedario, números 0–31, días y meses (days and months). Wordwall links provided.",
+   "content_zh": "課堂主題練習連結：字母（el abecedario）、數字 0–31、星期與月份。附 Wordwall 練習連結。"
+  },
+  {
+   "date": "2026-09-17",
+   "class_en": "26-27 6B Chinese",
+   "class_zh": "中文 6B",
+   "author": "teacher",
+   "content_en": "「文學之星」比賽簡介會：2026 年 9 月 17 日 10:15–10:40，地點更改為 5 樓會議室一（CR1）。",
+   "content_zh": "「文學之星」比賽簡介會：2026 年 9 月 17 日 10:15–10:40，更改地點：5 樓會議室一（CR1）。"
+  },
+  {
+   "date": "2026-09-16",
+   "class_en": "Maths 6B",
+   "class_zh": "數學 6B",
    "author": "Janice Leung",
-   "class_en": "6B Homeroom",
-   "class_zh": "6B 班主任",
-   "content_en": "Multi-Sports Challenge.",
-   "content_zh": "Multi-Sports Challenge。",
-   "date": "2026-09-24"
+   "content_en": "AI Mathematical Olympiad — global online competition, 9 questions, Sept 16–Nov 5, 2026, free of charge. Register at wsaweb.org/aiomaths.",
+   "content_zh": "AI 數學奧林匹克——全球網上比賽，共 9 題，2026 年 9 月 16 日至 11 月 5 日，免費。於 wsaweb.org/aiomaths 報名。"
+  },
+  {
+   "date": "2026-09-16",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Friday Club Details. Screenshot attached.",
+   "content_zh": "週五學會詳情。附截圖。"
+  },
+  {
+   "date": "2026-09-15",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Board Game Ambassador Recruitment — fill in the Google form by 22/9.",
+   "content_zh": "桌遊大使招募——9 月 22 日前填 Google 表格。"
+  },
+  {
+   "date": "2026-09-15",
+   "class_en": "26-27 6B Chinese",
+   "class_zh": "中文 6B",
+   "author": "teacher",
+   "content_en": "Recurring reminders (posted ~mid-Sept): Wednesday in-class dictation; Friday Chinese lesson writing benchmark (character description writing); 2 Sept after-class task: complete the keyword-finding on workbook pp. 10–11.",
+   "content_zh": "定期提醒（約 9 月中旬發佈）：週三班內聽寫；週五中文課寫作摸底（人物描寫文）；9 月 2 日課後任務：完成手冊第 10–11 頁尋找課內例句關鍵詞。"
+  },
+  {
+   "date": "2026-09-14",
+   "class_en": "26-27 6B Chinese",
+   "class_zh": "中文 6B",
+   "author": "teacher",
+   "content_en": "0914 課堂內容及中文功課（供缺勤同學參考）— 完成手冊：P18–19.",
+   "content_zh": "9 月 14 日課堂內容及中文功課（供缺勤同學參考）——完成手冊第 18–19 頁。"
+  },
+  {
+   "date": "2026-09-13",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Bring formal uniform to change into after the field trip.",
+   "content_zh": "實地考察後帶正式校服更換。"
+  },
+  {
+   "date": "2026-09-11",
+   "class_en": "6B Homeroom 2026-2027",
+   "class_zh": "6B 班主任班",
+   "author": "Janice Leung / Karen Wong",
+   "content_en": "Cir A023 Y1–6 Student Health Service / Dental — deadline 14 Sept (students 24, 25, 28, 30, 31 missing).",
+   "content_zh": "通告 A023 小一至小六學生健康服務／牙科——9 月 14 日截止（24、25、28、30、31 號同學未交）。"
+  },
+  {
+   "date": "2026-09-10",
+   "class_en": "AÑO 6 A-B 2026-2027",
+   "class_zh": "西班牙語 6 A-B",
+   "author": "Silvia Melita Gonzalez Medina",
+   "content_en": "Weeks of Sept 14 & 21: Numbers 1–31, asking/stating age, birthdays, dates, months. Links: números 1–31, días y meses, verbo ser y llamarse.",
+   "content_zh": "9 月 14 及 21 日當週：數字 1–31、詢問／表達年齡、生日、日期、月份。連結：數字 1–31、星期與月份、動詞 ser 及 llamarse。"
+  },
+  {
+   "date": "2026-09-10",
+   "class_en": "6AB STEM R1 (AUG)",
+   "class_zh": "STEM",
+   "author": "David Go",
+   "content_en": "1st test of coding a micro:bit tamagotchi (Google Slides link).",
+   "content_zh": "micro:bit 電子寵物編程初測試（Google Slides 連結）。"
+  },
+  {
+   "date": "2026-09-08",
+   "class_en": "26-27 6B Music",
+   "class_zh": "音樂 6B",
+   "author": "Kitty Tam",
+   "content_en": "\"very good 6B!\" with attachment \"year 6 elements of music.docx\".",
+   "content_zh": "「very good 6B!」附「year 6 elements of music.docx」。"
+  },
+  {
+   "date": "2026-09-07",
+   "class_en": "6B ART 26/27",
+   "class_zh": "視覺藝術 6B",
+   "author": "teacher",
+   "content_en": "HOMEWORK TASK — Complete slides, share link with view permission to teacher, prepare group presentation, prepare answers to attached questions (Interview questions.pptx). (Posted 7 Sept; shown as done.)",
+   "content_zh": "功課任務——完成簡報、以檢視權限分享連結給老師、準備小組匯報、準備附件問題的答案（Interview questions.pptx）。（9 月 7 日發佈；顯示已完成。）"
+  },
+  {
+   "date": "2026-09-03",
+   "class_en": "26-27 6B Music",
+   "class_zh": "音樂 6B",
+   "author": "Kitty Tam",
+   "content_en": "Don't forget to bring the following items to music class: a. music exercise book, b. music folder, c. sight singing book 2, d. stationery. Enjoy!",
+   "content_zh": "別忘記帶以下物品上音樂課：a. 音樂作業簿 b. 音樂文件夾 c. 視唱書 2 d. 文具。祝愉快！"
+  },
+  {
+   "date": "2026-08-30",
+   "class_en": "AÑO 6 A-B 2026-2027",
+   "class_zh": "西班牙語 6 A-B",
+   "author": "Silvia Melita Gonzalez Medina",
+   "content_en": "Lesson on greetings and farewells (saludos y despedidas). Wordwall links provided.",
+   "content_zh": "問候與道別（saludos y despedidas）課程。附 Wordwall 練習連結。"
   }
  ],
  "events": [
   {
-   "date": "2026-10-04",
-   "details_en": "French homework — completed.",
-   "details_zh": "法文家課——已完成。",
-   "end_date": null,
-   "location": null,
-   "time": null,
-   "title_en": "French Homework due",
-   "title_zh": "法文家課截止",
-   "type": "homework"
-  },
-  {
-   "date": "2026-10-04",
-   "details_en": "Finish the script; be ready to rehearse — completed.",
-   "details_zh": "完成劇本，準備排練——已完成。",
-   "end_date": null,
-   "location": null,
-   "time": null,
-   "title_en": "Drama: Finished Scripts due",
-   "title_zh": "戲劇：完成劇本截止",
-   "type": "homework"
-  },
-  {
-   "date": "2026-10-04",
-   "details_en": "Mood Board in sketchbook — completed.",
-   "details_zh": "喺速寫簿完成心情板——已完成。",
-   "end_date": null,
-   "location": null,
-   "time": null,
-   "title_en": "Art: Mood Board due",
-   "title_zh": "視藝：心情板截止",
-   "type": "homework"
-  },
-  {
    "date": "2026-10-05",
-   "details_en": "Online reading programme starts; first week must all be completed by 9 Oct 23:59 — already completed.",
-   "details_zh": "網上閱讀計劃開始；第一週要喺10月9日 23:59 前全部完成——已完成。",
    "end_date": null,
-   "location": null,
-   "time": null,
+   "type": "activity",
    "title_en": "Chinese 「篇篇流螢」 reading programme launches",
-   "title_zh": "中文「篇篇流螢」網上閱讀計劃開始",
-   "type": "activity"
+   "title_zh": "中文「篇篇流螢」網上閱讀計劃啟動",
+   "details_en": "The 「篇篇流螢」 online reading programme officially launches. The class requires the first week to be fully completed; Steve already finished it ahead of launch.",
+   "details_zh": "「篇篇流螢」網上閱讀計劃正式啟動。本班要求計劃第一週必須全部完成；Steve 已提前完成。",
+   "time": null,
+   "location": null
   },
   {
    "date": "2026-10-06",
-   "details_en": "Do the corrections in Official Homework 02 (Mark as Done in Classroom).",
-   "details_zh": "完成 Official Homework 02 嘅訂正（喺 Classroom 按 Mark as Done 交）。",
    "end_date": null,
-   "location": null,
-   "time": "23:59",
-   "title_en": "Maths corrections due (Official Homework 02)",
-   "title_zh": "數學訂正截止（Official Homework 02）",
-   "type": "homework"
-  },
-  {
-   "date": "2026-10-06",
-   "details_en": "Revise all Topic 1 worksheets and the PowerPoint; bring pen, pencil, eraser and ruler.",
-   "details_zh": "溫習 Topic 1 所有工作紙同 PowerPoint；帶筆、鉛筆、擦膠同間尺。",
-   "end_date": null,
-   "location": null,
-   "time": "P7, 30 mins",
+   "type": "test",
    "title_en": "Science Quiz 1 (Topic 1)",
-   "title_zh": "科學 Quiz 1（Topic 1）",
-   "type": "test"
+   "title_zh": "科學測驗 1（單元一）",
+   "details_en": "30-minute quiz during P7 covering all of Topic 1 (lab safety and apparatus, scientific method, variables/data tables/graphs, use of Bunsen burner). Revise all worksheets and the four PowerPoints. Bring pen, pencil, eraser and ruler.",
+   "details_zh": "第七節進行的 30 分鐘測驗，範圍為單元一全部內容（實驗室安全及儀器、科學方法、變量／數據表／圖表、酒精燈使用）。溫習所有工作紙及四份 PowerPoint。帶備筆、鉛筆、擦膠及直尺。",
+   "time": "P7",
+   "location": "Science classroom"
+  },
+  {
+   "date": "2026-10-06",
+   "end_date": null,
+   "type": "homework",
+   "title_en": "Maths corrections due (Official Homework 02)",
+   "title_zh": "數學更正功課到期（Official Homework 02）",
+   "details_en": "Corrections were due by 23:59 on 6 Oct. Already handed in on 3 Oct (two PDFs uploaded at 10:04/10:05 PM). No action needed.",
+   "details_zh": "更正功課於 10 月 6 日 23:59 到期。已於 10 月 3 日交妥（晚上 10:04/10:05 上傳兩份 PDF）。無需行動。",
+   "time": "23:59",
+   "location": "Google Classroom"
   },
   {
    "date": "2026-10-07",
-   "details_en": "Email chans@cky.edu.hk by Wed 7 Oct.",
-   "details_zh": "10月7日（星期三）前電郵 chans@cky.edu.hk。",
    "end_date": null,
-   "location": null,
-   "time": null,
+   "type": "activity",
    "title_en": "Carbon Neutrality Student Ambassador application deadline",
-   "title_zh": "碳中和學生大使報名截止",
-   "type": "activity"
+   "title_zh": "「實現碳中和」學生大使申請截止",
+   "details_en": "Interested students email chans@cky.edu.hk by 7 Oct 2026. Poster in the Homeroom stream.",
+   "details_zh": "有興趣的同學請於 2026 年 10 月 7 日前電郵 chans@cky.edu.hk。海報見班主任 Stream。",
+   "time": null,
+   "location": null
   },
   {
    "date": "2026-10-09",
-   "details_en": "First week of the programme must all be completed — already completed.",
-   "details_zh": "計劃第一週要全部完成——已完成。",
    "end_date": null,
-   "location": null,
-   "time": "23:59",
+   "type": "homework",
    "title_en": "Chinese 「篇篇流螢」 first-week deadline",
-   "title_zh": "中文「篇篇流螢」第一週完成截止",
-   "type": "homework"
+   "title_zh": "中文「篇篇流螢」第一週截止",
+   "details_en": "First-week deadline 9 Oct 23:59. Already completed ahead of the 5 Oct launch.",
+   "details_zh": "第一週截止日期為 10 月 9 日 23:59。在 10 月 5 日啟動前已提前完成。",
+   "time": "23:59",
+   "location": "Online"
   },
   {
    "date": "2026-10-12",
-   "details_en": "Formative MC quiz covering Unit 1.1–1.5 (chronology, family tree, source bias and reliability).",
-   "details_zh": "形成性評估 MC 小測，範圍：單元 1.1–1.5（年代學、族譜、資料偏見與可靠性）。",
    "end_date": null,
-   "location": null,
+   "type": "test",
+   "title_en": "Hist formative MC quiz (Units 1.1–1.5)",
+   "title_zh": "歷史形成性選擇題小測（單元 1.1–1.5）",
+   "details_en": "Multiple-choice quiz on Unit 1 topics (introduction to history, family tree, sources, bias and reliability). Announced 29 Sept by Joyce Li. Duration and venue not specified in the post.",
+   "details_zh": "單元一課題選擇題小測（歷史導論、族譜、史料、偏見與可靠性）。由 Joyce Li 於 9 月 29 日公佈。帖文未註明時長及地點。",
    "time": null,
-   "title_en": "History formative MC quiz",
-   "title_zh": "歷史形成性評估 MC 小測",
-   "type": "test"
+   "location": null
   },
   {
    "date": "2026-10-13",
-   "details_en": "40 minutes, calculators NOT allowed.",
-   "details_zh": "40 分鐘，唔可以用計數機。",
    "end_date": null,
-   "location": null,
+   "type": "test",
+   "title_en": "Maths UC02 Percentages",
+   "title_zh": "數學 UC02 百分數",
+   "details_en": "Week A Tuesday test, 40 minutes. Calculators not allowed. Covers Unit 2: Percentages.",
+   "details_zh": "Week A 星期二測驗，40 分鐘。不准使用計算機。範圍為單元二：百分數。",
    "time": null,
-   "title_en": "Maths UC02 Percentages test",
-   "title_zh": "數學 UC02 百分比測驗",
-   "type": "test"
+   "location": null
   },
   {
    "date": "2026-10-14",
-   "details_en": "Finish the Digital Society 2 worksheet; hand in for the next class (Mark as Done in Classroom).",
-   "details_zh": "完成 Digital Society 2 工作紙，下一堂交（喺 Classroom 按 Mark as Done 交）。",
    "end_date": null,
-   "location": null,
+   "type": "homework",
+   "title_en": "ICT Digital Society 2 (worksheet) due",
+   "title_zh": "資訊科技 Digital Society 2（工作紙）到期",
+   "details_en": "Finish the Digital Society 2 worksheet (Google Docs attached to the assignment) and click Mark as done. Most was completed in class. This is the only outstanding dated homework.",
+   "details_zh": "完成 Digital Society 2 工作紙（作業附 Google 文件）並按 Mark as done。大部分已在課堂完成。這是唯一有日期而未交的功課。",
    "time": null,
-   "title_en": "ICT Digital Society 2 due",
-   "title_zh": "資訊科技 Digital Society 2 截止",
-   "type": "homework"
+   "location": "Google Classroom"
   },
   {
    "date": "2026-10-15",
-   "details_en": "40 minutes, in class. Revision: workbook pp. 3–17, PPT lessons 0/1/2a/2b/3.",
-   "details_zh": "40 分鐘，課堂進行。溫習：作業簿第 3–17 頁、PPT 第 0/1/2a/2b/3 課。",
    "end_date": null,
-   "location": null,
-   "time": null,
-   "title_en": "Geography unit test: Our Restless Earth",
-   "title_zh": "地理單元測驗：Our Restless Earth",
-   "type": "test"
+   "type": "test",
+   "title_en": "Geography Unit Test — Our Restless Earth",
+   "title_zh": "地理單元測驗——Our Restless Earth",
+   "details_en": "40-minute in-class test on Module 1 (lessons 0–3: introduction, continents and oceans, earth structure, internal processes and landforms). Revise booklet pp. 3–17, PPT lessons, Levels of questioning sheet.",
+   "details_zh": "40 分鐘課堂測驗，範圍為模組一（第 0–3 課：導論、洲與洋、地球結構、內部作用與地貌）。溫習小冊子第 3–17 頁、PPT 課程及提問層次工作紙。",
+   "time": "class time",
+   "location": "Geography classroom"
   },
   {
    "date": "2026-10-16",
-   "details_en": "Bring PE uniform. Further sessions: 6 Nov, 13 Nov, 20 Nov, 4 Dec, 11 Dec.",
-   "details_zh": "帶體育服。之後嘅活動：11月6日、11月13日、11月20日、12月4日、12月11日。",
    "end_date": null,
-   "location": null,
+   "type": "activity",
+   "title_en": "Friday Badminton Club session",
+   "title_zh": "星期五羽毛球學會活動",
+   "details_en": "Club session; bring PE uniform. Further sessions: 6 Nov, 13 Nov, 20 Nov, 4 Dec, 11 Dec.",
+   "details_zh": "學會活動；帶體育服。之後日期：11 月 6 日、11 月 13 日、11 月 20 日、12 月 4 日、12 月 11 日。",
    "time": null,
-   "title_en": "Badminton Club session",
-   "title_zh": "羽毛球學會活動",
-   "type": "activity"
-  },
-  {
-   "date": "2026-10-22",
-   "details_en": "中國中學生作文比賽——文學新秀比賽 (voluntary).",
-   "details_zh": "中國中學生作文比賽——文學新秀比賽（自願參加）。",
-   "end_date": null,
-   "location": null,
-   "time": null,
-   "title_en": "Chinese writing competition deadline",
-   "title_zh": "中文作文比賽截止",
-   "type": "activity"
+   "location": null
   },
   {
    "date": "2026-11-14",
-   "details_en": "HK$200 fee. Email the art teacher to join.",
-   "details_zh": "費用 HK$200。有興趣請電郵視藝老師報名。",
    "end_date": null,
-   "location": "Sunset Lawn, West Kowloon Cultural District",
+   "type": "activity",
+   "title_en": "Guinness World Records ceramic mural attempt",
+   "title_zh": "健力士世界紀錄陶瓷壁畫挑戰",
+   "details_en": "1,000 people create a ceramic mural in one session to attempt a world record. Fee HK$200. Email the art teacher to join. 10:00–18:00.",
+   "details_zh": "1,000 人同時創作陶瓷壁畫，挑戰世界紀錄。費用 200 港元。有興趣請電郵美術老師。上午 10 時至下午 6 時。",
    "time": "10:00–18:00",
-   "title_en": "Art Guinness World Record ceramic mural",
-   "title_zh": "視藝健力士世界紀錄陶瓷壁畫",
-   "type": "activity"
+   "location": "Sunset Lawn, West Kowloon Cultural District"
   },
   {
    "date": "2026-12-05",
-   "details_en": "Free entry; print the reply slip and return it to your Maths teacher.",
-   "details_zh": "免費參加；列印回條交畀數學老師。",
    "end_date": null,
-   "location": null,
-   "time": "8:45–12:00",
-   "title_en": "13th Annual HK Primary Mathematics Challenge",
-   "title_zh": "第十三屆全港小學數學挑戰賽",
-   "type": "activity"
+   "type": "activity",
+   "title_en": "Hong Kong Primary Mathematics Challenge (HKPMC 2026)",
+   "title_zh": "香港小學數學挑戰賽（HKPMC 2026）",
+   "details_en": "All Y1–Y6 students eligible; free. Reply slip to the maths teacher. 8:45 am–12:00 noon.",
+   "details_zh": "小一至小六學生均可參加，免費。回條交數學老師。上午 8:45 至中午 12:00。",
+   "time": "08:45–12:00",
+   "location": null
   }
  ],
  "timetable": "Data_Steve/timetable.html",
