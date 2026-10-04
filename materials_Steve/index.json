@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T15:28:37+08:00",
+ "updated": "2026-10-04T23:34:55+08:00",
  "count": 12,
  "subjects": [
   {
@@ -78,7 +78,8 @@
    "file": "materials_Steve/Geography/2026-10-03/Geography-Restless-Earth-Flashcards-15oct2026.pdf",
    "title_en": "Geography Restless Earth — Flashcards",
    "title_zh": "地理Restless Earth——生字卡",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Geography",
@@ -90,7 +91,8 @@
    "file": "materials_Steve/Geography/2026-10-03/Geography-Restless-Earth-Key-Notes-15oct2026.pdf",
    "title_en": "Geography Restless Earth — Key Notes",
    "title_zh": "地理Restless Earth——重點筆記",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Geography",
@@ -102,7 +104,8 @@
    "file": "materials_Steve/Geography/2026-10-03/Geography-Restless-Earth-Mock-Paper-15oct2026.pdf",
    "title_en": "Geography Restless Earth — Mock Paper",
    "title_zh": "地理Restless Earth——模擬試卷",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "History",
@@ -114,7 +117,8 @@
    "file": "materials_Steve/History/2026-10-03/History-MC-Quiz-Mock-Paper-04oct2026.pdf",
    "title_en": "History MC Quiz — Mock Paper",
    "title_zh": "歷史MC Quiz——模擬試卷",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "History",
@@ -126,7 +130,8 @@
    "file": "materials_Steve/History/2026-10-03/History-Unit1-Flashcards-04oct2026.pdf",
    "title_en": "History Unit1 — Flashcards",
    "title_zh": "歷史Unit1——生字卡",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "History",
@@ -138,7 +143,8 @@
    "file": "materials_Steve/History/2026-10-03/History-Unit1-History-Skills-Key-Notes-04oct2026.pdf",
    "title_en": "History Unit1 History Skills — Key Notes",
    "title_zh": "歷史Unit1 History Skills——重點筆記",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "ICT",
@@ -150,7 +156,8 @@
    "file": "materials_Steve/ICT/2026-10-03/ICT-Digital-Society-2-Key-Notes-04oct2026.pdf",
    "title_en": "ICT Digital Society 2 — Key Notes",
    "title_zh": "資訊科技Digital Society 2——重點筆記",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Maths",
@@ -162,7 +169,8 @@
    "file": "materials_Steve/Maths/2026-10-03/Maths-UC02-Percentages-Flashcards-13oct2026.pdf",
    "title_en": "Maths UC02 Percentages — Flashcards",
    "title_zh": "數學UC02 Percentages——生字卡",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Maths",
@@ -174,7 +182,8 @@
    "file": "materials_Steve/Maths/2026-10-03/Maths-UC02-Percentages-Key-Notes-13oct2026.pdf",
    "title_en": "Maths UC02 Percentages — Key Notes",
    "title_zh": "數學UC02 Percentages——重點筆記",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Maths",
@@ -186,7 +195,8 @@
    "file": "materials_Steve/Maths/2026-10-03/Maths-UC02-Percentages-Mock-Paper-13oct2026.pdf",
    "title_en": "Maths UC02 Percentages — Mock Paper",
    "title_zh": "數學UC02 Percentages——模擬試卷",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Science",
@@ -198,7 +208,8 @@
    "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-Flashcards.pdf",
    "title_en": "Science Quiz1 Topic1 — Flashcards",
    "title_zh": "科學Quiz1 Topic1——生字卡",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   },
   {
    "subject_en": "Science",
@@ -210,7 +221,8 @@
    "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-KeyNotes.pdf",
    "title_en": "Science Quiz1 Topic1 KeyNotes — Key Notes",
    "title_zh": "科學Quiz1 Topic1 KeyNotes——重點筆記",
-   "date": "2026-10-03"
+   "date": "2026-10-03",
+   "upload_date": "2026-10-03"
   }
  ]
 }
