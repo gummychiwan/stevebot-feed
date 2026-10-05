@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-05T16:27:19+08:00",
- "count": 13,
+ "updated": "2026-10-05T17:01:17+08:00",
+ "count": 16,
  "subjects": [
   {
    "en": "Art",
@@ -68,6 +68,45 @@
   }
  ],
  "materials": [
+  {
+   "subject_en": "Chinese",
+   "subject_zh": "中文",
+   "test_en": "Basic Knowledge Challenge",
+   "test_date": "2026-10-08",
+   "kind_en": "Flashcards",
+   "kind_zh": "生字卡",
+   "file": "materials_Steve/Chinese/2026-10-05/Chinese-Basic-Knowledge-Challenge-Flashcards-08oct2026.pdf",
+   "title_en": "Chinese Basic Knowledge Challenge — Flashcards",
+   "title_zh": "中文Basic Knowledge Challenge——生字卡",
+   "date": "2026-10-05",
+   "upload_date": "2026-10-05"
+  },
+  {
+   "subject_en": "Chinese",
+   "subject_zh": "中文",
+   "test_en": "Basic Knowledge Challenge",
+   "test_date": "2026-10-08",
+   "kind_en": "Key Notes",
+   "kind_zh": "重點筆記",
+   "file": "materials_Steve/Chinese/2026-10-05/Chinese-Basic-Knowledge-Challenge-Key-Notes-08oct2026.pdf",
+   "title_en": "Chinese Basic Knowledge Challenge — Key Notes",
+   "title_zh": "中文Basic Knowledge Challenge——重點筆記",
+   "date": "2026-10-05",
+   "upload_date": "2026-10-05"
+  },
+  {
+   "subject_en": "Chinese",
+   "subject_zh": "中文",
+   "test_en": "Basic Knowledge Challenge",
+   "test_date": "2026-10-08",
+   "kind_en": "Mock Paper",
+   "kind_zh": "模擬試卷",
+   "file": "materials_Steve/Chinese/2026-10-05/Chinese-Basic-Knowledge-Challenge-Mock-Paper-08oct2026.pdf",
+   "title_en": "Chinese Basic Knowledge Challenge — Mock Paper",
+   "title_zh": "中文Basic Knowledge Challenge——模擬試卷",
+   "date": "2026-10-05",
+   "upload_date": "2026-10-05"
+  },
   {
    "subject_en": "Geography",
    "subject_zh": "地理",
