@@ -1,6 +1,6 @@
 {
  "date": "2026-10-05",
- "generated_at": "2026-10-05T16:25:38+08:00",
+ "generated_at": "2026-10-05T16:27:19+08:00",
  "source": "data.json",
  "homework": [
   {
@@ -841,20 +841,9 @@
    "subject_zh": "科學",
    "test_en": "Quiz1 Topic1",
    "test_date": "2026-10-06",
-   "kind_en": "Mock Paper",
-   "kind_zh": "模擬試卷",
-   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-Mock-Paper-06oct2026.pdf",
-   "title_en": "Science Quiz1 Topic1 — Mock Paper",
-   "title_zh": "科學Quiz1 Topic1——模擬試卷"
-  },
-  {
-   "subject_en": "Science",
-   "subject_zh": "科學",
-   "test_en": "Quiz1 Topic1",
-   "test_date": null,
    "kind_en": "Flashcards",
    "kind_zh": "生字卡",
-   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-Flashcards.pdf",
+   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-Flashcards-06oct2026.pdf",
    "title_en": "Science Quiz1 Topic1 — Flashcards",
    "title_zh": "科學Quiz1 Topic1——生字卡"
   },
@@ -862,12 +851,23 @@
    "subject_en": "Science",
    "subject_zh": "科學",
    "test_en": "Quiz1 Topic1 KeyNotes",
-   "test_date": null,
+   "test_date": "2026-10-06",
    "kind_en": "Key Notes",
    "kind_zh": "重點筆記",
-   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-KeyNotes.pdf",
+   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-KeyNotes-06oct2026.pdf",
    "title_en": "Science Quiz1 Topic1 KeyNotes — Key Notes",
    "title_zh": "科學Quiz1 Topic1 KeyNotes——重點筆記"
+  },
+  {
+   "subject_en": "Science",
+   "subject_zh": "科學",
+   "test_en": "Quiz1 Topic1",
+   "test_date": "2026-10-06",
+   "kind_en": "Mock Paper",
+   "kind_zh": "模擬試卷",
+   "file": "materials_Steve/Science/2026-10-03/Science-Quiz1-Topic1-Mock-Paper-06oct2026.pdf",
+   "title_en": "Science Quiz1 Topic1 — Mock Paper",
+   "title_zh": "科學Quiz1 Topic1——模擬試卷"
   }
  ]
 }
